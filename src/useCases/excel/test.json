@@ -1,0 +1,2375 @@
+{
+  "clientId": 112,
+  "data": [
+    {
+      "equipment": "EH 10",
+      "date": 45395,
+      "lastHour": 13845,
+      "nowHour": 13845
+    },
+    {
+      "equipment": "EH 11",
+      "date": 44813,
+      "lastHour": 5532,
+      "nowHour": 5965
+    },
+    {
+      "equipment": "EH 13",
+      "date": 44525,
+      "lastHour": 16694,
+      "nowHour": 16694
+    },
+    {
+      "equipment": "EH 18",
+      "date": 45134,
+      "lastHour": 18475,
+      "nowHour": 18699
+    },
+    {
+      "equipment": "EH 19",
+      "date": 45401,
+      "lastHour": 16618,
+      "nowHour": 16618
+    },
+    {
+      "equipment": "EH 20",
+      "date": 45066,
+      "lastHour": 5212,
+      "nowHour": 5396
+    },
+    {
+      "equipment": "EH 23",
+      "date": 45201,
+      "lastHour": 523,
+      "nowHour": 640
+    },
+    {
+      "equipment": "EH 24",
+      "date": 45176,
+      "lastHour": 15872,
+      "nowHour": 15872
+    },
+    {
+      "equipment": "EH 28",
+      "date": 43581,
+      "lastHour": 1641,
+      "nowHour": 1661
+    },
+    {
+      "equipment": "EH 30",
+      "date": 44771,
+      "lastHour": 12541,
+      "nowHour": 12669
+    },
+    {
+      "equipment": "EH 31",
+      "date": 45182,
+      "lastHour": 6046,
+      "nowHour": 6046
+    },
+    {
+      "equipment": "EH 32",
+      "date": 45162,
+      "lastHour": 5565,
+      "nowHour": 5669
+    },
+    {
+      "equipment": "EH 33",
+      "date": 45110,
+      "lastHour": 6528,
+      "nowHour": 7037
+    },
+    {
+      "equipment": "EH 34",
+      "date": 45122,
+      "lastHour": 7201,
+      "nowHour": 7379
+    },
+    {
+      "equipment": "EH 35",
+      "date": 45260,
+      "lastHour": 12436,
+      "nowHour": 12436
+    },
+    {
+      "equipment": "EH 36",
+      "date": 45278,
+      "lastHour": 10867,
+      "nowHour": 10867
+    },
+    {
+      "equipment": "EH 37",
+      "date": 45266,
+      "lastHour": 2354,
+      "nowHour": 2354
+    },
+    {
+      "equipment": "EH 38",
+      "date": 44852,
+      "lastHour": 2917,
+      "nowHour": 2952
+    },
+    {
+      "equipment": "EH 39",
+      "date": 45317,
+      "lastHour": 6489,
+      "nowHour": 6489
+    },
+    {
+      "equipment": "EH 40",
+      "date": 45268,
+      "lastHour": 6984,
+      "nowHour": 6984
+    },
+    {
+      "equipment": "EH 41",
+      "date": 45320,
+      "lastHour": 6503,
+      "nowHour": 6503
+    },
+    {
+      "equipment": "EH 42",
+      "date": 45159,
+      "lastHour": 5259,
+      "nowHour": 5610
+    },
+    {
+      "equipment": "EH 43",
+      "date": 45316,
+      "lastHour": 5136,
+      "nowHour": 5136
+    },
+    {
+      "equipment": "EH 44",
+      "date": 45306,
+      "lastHour": 5495,
+      "nowHour": 5639
+    },
+    {
+      "equipment": "EH 45",
+      "date": 45398,
+      "lastHour": 5112,
+      "nowHour": 5112
+    },
+    {
+      "equipment": "EH 46",
+      "date": 45238,
+      "lastHour": 5387,
+      "nowHour": 5483
+    },
+    {
+      "equipment": "EH 47",
+      "date": 45224,
+      "lastHour": 551,
+      "nowHour": 818
+    },
+    {
+      "equipment": "EH 48",
+      "date": 45224,
+      "lastHour": 2025,
+      "nowHour": 2111
+    },
+    {
+      "equipment": "EH 49",
+      "date": 45251,
+      "lastHour": 573,
+      "nowHour": 573
+    },
+    {
+      "equipment": "EH 50",
+      "date": 45238,
+      "lastHour": 1634,
+      "nowHour": 1707
+    },
+    {
+      "equipment": "EH 51",
+      "date": 45219,
+      "lastHour": 2016,
+      "nowHour": 2016
+    },
+    {
+      "equipment": "EH 52",
+      "date": 45236,
+      "lastHour": 523,
+      "nowHour": 523
+    },
+    {
+      "equipment": "EH 53",
+      "date": 45248,
+      "lastHour": 570,
+      "nowHour": 570
+    },
+    {
+      "equipment": "EH 62",
+      "date": 45287,
+      "lastHour": 2436,
+      "nowHour": 2436
+    },
+    {
+      "equipment": "TE 15",
+      "date": 44501,
+      "lastHour": 4385,
+      "nowHour": 4602
+    },
+    {
+      "equipment": "TE 17",
+      "date": 45387,
+      "lastHour": 15384,
+      "nowHour": 15384
+    },
+    {
+      "equipment": "TE 18",
+      "date": 44937,
+      "lastHour": 12616,
+      "nowHour": 13186
+    },
+    {
+      "equipment": "TE 19",
+      "date": 44631,
+      "lastHour": 9606,
+      "nowHour": 9774
+    },
+    {
+      "equipment": "TE 20",
+      "date": 45092,
+      "lastHour": 14102,
+      "nowHour": 14102
+    },
+    {
+      "equipment": "TE 21",
+      "date": 45400,
+      "lastHour": 11244,
+      "nowHour": 11244
+    },
+    {
+      "equipment": "TE 22",
+      "date": 45100,
+      "lastHour": 288,
+      "nowHour": 500
+    },
+    {
+      "equipment": "TE 23",
+      "date": 45154,
+      "lastHour": 7123,
+      "nowHour": 7178
+    },
+    {
+      "equipment": "TE 25",
+      "date": 44643,
+      "lastHour": 13232,
+      "nowHour": 13232
+    },
+    {
+      "equipment": "TE 26",
+      "date": 45154,
+      "lastHour": 17807,
+      "nowHour": 17807
+    },
+    {
+      "equipment": "TE 27",
+      "date": 45220,
+      "lastHour": 14200,
+      "nowHour": 14200
+    },
+    {
+      "equipment": "TE 28",
+      "date": 45246,
+      "lastHour": 2054,
+      "nowHour": 2054
+    },
+    {
+      "equipment": "TE 30",
+      "date": 45218,
+      "lastHour": 5575,
+      "nowHour": 5575
+    },
+    {
+      "equipment": "TE 31",
+      "date": 45181,
+      "lastHour": 4255,
+      "nowHour": 4255
+    },
+    {
+      "equipment": "TE 32",
+      "date": 43633,
+      "lastHour": 4575,
+      "nowHour": 4575
+    },
+    {
+      "equipment": "TE 33",
+      "date": 44345,
+      "lastHour": 556,
+      "nowHour": 745
+    },
+    {
+      "equipment": "TE 34",
+      "date": 44718,
+      "lastHour": 1704,
+      "nowHour": 1843
+    },
+    {
+      "equipment": "TE 35",
+      "date": 45317,
+      "lastHour": 7216,
+      "nowHour": 7216
+    },
+    {
+      "equipment": "TE 36",
+      "date": 45246,
+      "lastHour": 6966,
+      "nowHour": 6966
+    },
+    {
+      "equipment": "TE 37",
+      "date": 45289,
+      "lastHour": 5210,
+      "nowHour": 5210
+    },
+    {
+      "equipment": "TE 38",
+      "date": 45019,
+      "lastHour": 1315,
+      "nowHour": 1315
+    },
+    {
+      "equipment": "TE 39",
+      "date": 45019,
+      "lastHour": 1349,
+      "nowHour": 1353
+    },
+    {
+      "equipment": "TE 40",
+      "date": 45309,
+      "lastHour": 4922,
+      "nowHour": 4922
+    },
+    {
+      "equipment": "TE 41",
+      "date": 45302,
+      "lastHour": 779,
+      "nowHour": 779
+    },
+    {
+      "equipment": "TE 42",
+      "date": 45289,
+      "lastHour": 5197,
+      "nowHour": 5197
+    },
+    {
+      "equipment": "TE 43",
+      "date": 45317,
+      "lastHour": 5701,
+      "nowHour": 5701
+    },
+    {
+      "equipment": "TE 44",
+      "date": 44841,
+      "lastHour": 3736,
+      "nowHour": 3805
+    },
+    {
+      "equipment": "MN 14",
+      "date": 44664,
+      "lastHour": 666,
+      "nowHour": 1172
+    },
+    {
+      "equipment": "MN 17",
+      "date": "28/08/2023",
+      "lastHour": 2745,
+      "nowHour": 2943
+    },
+    {
+      "equipment": "MN 18",
+      "date": 44774,
+      "lastHour": 3252,
+      "nowHour": 3561
+    },
+    {
+      "equipment": "MN 19",
+      "date": 44833,
+      "lastHour": 877,
+      "nowHour": 877
+    },
+    {
+      "equipment": "MN 20",
+      "date": 45126,
+      "lastHour": 13781,
+      "nowHour": 13781
+    },
+    {
+      "equipment": "MN 22",
+      "date": 44931,
+      "lastHour": 12230,
+      "nowHour": 12425
+    },
+    {
+      "equipment": "MN 28",
+      "date": 45353,
+      "lastHour": 13777,
+      "nowHour": 13777
+    },
+    {
+      "equipment": "MN 29",
+      "date": 44929,
+      "lastHour": 12140,
+      "nowHour": 12140
+    },
+    {
+      "equipment": "MN 32",
+      "date": 45371,
+      "lastHour": 12704,
+      "nowHour": 12704
+    },
+    {
+      "equipment": "MN 33",
+      "date": 45168,
+      "lastHour": 9444,
+      "nowHour": 9674
+    },
+    {
+      "equipment": "MN 34",
+      "date": 44649,
+      "lastHour": 11746,
+      "nowHour": 12316
+    },
+    {
+      "equipment": "MN 35",
+      "date": 45006,
+      "lastHour": 10755,
+      "nowHour": 10837
+    },
+    {
+      "equipment": "MN 36",
+      "date": 44415,
+      "lastHour": 10774,
+      "nowHour": 10948
+    },
+    {
+      "equipment": "MN 37",
+      "date": 45165,
+      "lastHour": 5912,
+      "nowHour": 5912
+    },
+    {
+      "equipment": "MN 38",
+      "date": 45399,
+      "lastHour": 6860,
+      "nowHour": 6860
+    },
+    {
+      "equipment": "MN 39",
+      "date": 45204,
+      "lastHour": 7725,
+      "nowHour": 7725
+    },
+    {
+      "equipment": "MN 40",
+      "date": 45218,
+      "lastHour": 5945,
+      "nowHour": 5945
+    },
+    {
+      "equipment": "MN 41",
+      "date": 45354,
+      "lastHour": 2364,
+      "nowHour": 2364
+    },
+    {
+      "equipment": "MN 42",
+      "date": 45273,
+      "lastHour": 4613,
+      "nowHour": 4613
+    },
+    {
+      "equipment": "MN 43",
+      "date": 45126,
+      "lastHour": 7654,
+      "nowHour": 7782
+    },
+    {
+      "equipment": "MN 44",
+      "date": 45206,
+      "lastHour": 437,
+      "nowHour": 494
+    },
+    {
+      "equipment": "MN 45",
+      "date": 45272,
+      "lastHour": 7312,
+      "nowHour": 7312
+    },
+    {
+      "equipment": "MN 46",
+      "date": 45142,
+      "lastHour": 6238,
+      "nowHour": 6745
+    },
+    {
+      "equipment": "MN 47",
+      "date": 45178,
+      "lastHour": 982,
+      "nowHour": 982
+    },
+    {
+      "equipment": "MN 48",
+      "date": 45192,
+      "lastHour": 2179,
+      "nowHour": 2179
+    },
+    {
+      "equipment": "MN 49",
+      "date": 45169,
+      "lastHour": 1582,
+      "nowHour": 2141
+    },
+    {
+      "equipment": "MN 50",
+      "date": 45394,
+      "lastHour": 2119,
+      "nowHour": 2119
+    },
+    {
+      "equipment": "MN 51",
+      "date": 44831,
+      "lastHour": 511,
+      "nowHour": 731
+    },
+    {
+      "equipment": "MN 54",
+      "date": 45141,
+      "lastHour": 995,
+      "nowHour": 1704
+    },
+    {
+      "equipment": "MN 56",
+      "date": 44850,
+      "lastHour": 1037,
+      "nowHour": 1599
+    },
+    {
+      "equipment": "MN 57",
+      "date": 45192,
+      "lastHour": 1570,
+      "nowHour": 1570
+    },
+    {
+      "equipment": "MN 59",
+      "date": 45193,
+      "lastHour": 1633,
+      "nowHour": 2008
+    },
+    {
+      "equipment": "MN 60",
+      "date": 45178,
+      "lastHour": 1013,
+      "nowHour": 1013
+    },
+    {
+      "equipment": "MN 64",
+      "date": 44841,
+      "lastHour": 506,
+      "nowHour": 639
+    },
+    {
+      "equipment": "MN 66",
+      "date": 45178,
+      "lastHour": 1510,
+      "nowHour": 1510
+    },
+    {
+      "equipment": "TA 16",
+      "date": 45078,
+      "lastHour": 7200,
+      "nowHour": 7200
+    },
+    {
+      "equipment": "TA 17",
+      "date": 45007,
+      "lastHour": 6107,
+      "nowHour": 6144
+    },
+    {
+      "equipment": "TA 18",
+      "date": 45001,
+      "lastHour": 4161,
+      "nowHour": 4161
+    },
+    {
+      "equipment": "TA 19",
+      "date": 44652,
+      "lastHour": 5167,
+      "nowHour": 5264
+    },
+    {
+      "equipment": "TA 21",
+      "date": 45061,
+      "lastHour": 4577,
+      "nowHour": 4577
+    },
+    {
+      "equipment": "TA 24",
+      "date": 45383,
+      "lastHour": 6405,
+      "nowHour": 6405
+    },
+    {
+      "equipment": "TA 25",
+      "date": 45185,
+      "lastHour": 3949,
+      "nowHour": 4077
+    },
+    {
+      "equipment": "TA 26",
+      "date": 44656,
+      "lastHour": 1096,
+      "nowHour": 1097
+    },
+    {
+      "equipment": "TA 27",
+      "date": 45007,
+      "lastHour": 5134,
+      "nowHour": 5134
+    },
+    {
+      "equipment": "TA 28",
+      "date": 44439,
+      "lastHour": 6187,
+      "nowHour": 6281
+    },
+    {
+      "equipment": "TA 29",
+      "date": 45175,
+      "lastHour": 4479,
+      "nowHour": 4479
+    },
+    {
+      "equipment": "TA 30",
+      "date": 45173,
+      "lastHour": 3621,
+      "nowHour": 3740
+    },
+    {
+      "equipment": "TA 31",
+      "date": 45218,
+      "lastHour": 3866,
+      "nowHour": 3866
+    },
+    {
+      "equipment": "TA 32",
+      "date": 45171,
+      "lastHour": 1803,
+      "nowHour": 1978
+    },
+    {
+      "equipment": "TA 33",
+      "date": 45217,
+      "lastHour": 4876,
+      "nowHour": 4876
+    },
+    {
+      "equipment": "TA 34",
+      "date": 45261,
+      "lastHour": 3190,
+      "nowHour": 3190
+    },
+    {
+      "equipment": "TA 35",
+      "date": 45078,
+      "lastHour": 3498,
+      "nowHour": 3498
+    },
+    {
+      "equipment": "TA 36",
+      "date": 45215,
+      "lastHour": 5106,
+      "nowHour": 5106
+    },
+    {
+      "equipment": "TA 37",
+      "date": 45194,
+      "lastHour": 4024,
+      "nowHour": 4024
+    },
+    {
+      "equipment": "TA 38",
+      "date": 45094,
+      "lastHour": 3749,
+      "nowHour": 3779
+    },
+    {
+      "equipment": "TA 39",
+      "date": 45252,
+      "lastHour": 1746,
+      "nowHour": 1746
+    },
+    {
+      "equipment": "TA 40",
+      "date": 44750,
+      "lastHour": 732,
+      "nowHour": 732
+    },
+    {
+      "equipment": "TA 41",
+      "date": 44448,
+      "lastHour": 443,
+      "nowHour": 649
+    },
+    {
+      "equipment": "TA 42",
+      "date": 44791,
+      "lastHour": 488,
+      "nowHour": 802
+    },
+    {
+      "equipment": "TA 43",
+      "date": 44825,
+      "lastHour": 511,
+      "nowHour": 658
+    },
+    {
+      "equipment": "TA 44",
+      "date": 45211,
+      "lastHour": 614,
+      "nowHour": 614
+    },
+    {
+      "equipment": "TA 45",
+      "date": 45073,
+      "lastHour": 310,
+      "nowHour": 324
+    },
+    {
+      "equipment": "TA 46",
+      "date": 45073,
+      "lastHour": 340,
+      "nowHour": 340
+    },
+    {
+      "equipment": "TA 47",
+      "date": 45146,
+      "lastHour": 1128,
+      "nowHour": 1400
+    },
+    {
+      "equipment": "TA 48",
+      "date": 45212,
+      "lastHour": 745,
+      "nowHour": 745
+    },
+    {
+      "equipment": "TA 49",
+      "date": 45096,
+      "lastHour": 359,
+      "nowHour": 770
+    },
+    {
+      "equipment": "RE 10",
+      "date": 45386,
+      "lastHour": 8127,
+      "nowHour": 8127
+    },
+    {
+      "equipment": "RE 11",
+      "date": 44916,
+      "lastHour": 8762,
+      "nowHour": 8973
+    },
+    {
+      "equipment": "RE 12",
+      "date": 45205,
+      "lastHour": 10073,
+      "nowHour": 10618
+    },
+    {
+      "equipment": "RE 13",
+      "date": 45248,
+      "lastHour": 9262,
+      "nowHour": 9262
+    },
+    {
+      "equipment": "RE 15",
+      "date": 45177,
+      "lastHour": 7400,
+      "nowHour": 7847
+    },
+    {
+      "equipment": "RE 16",
+      "date": 45035,
+      "lastHour": 11050,
+      "nowHour": 11050
+    },
+    {
+      "equipment": "RE 17",
+      "date": 45245,
+      "lastHour": 10555,
+      "nowHour": 10718
+    },
+    {
+      "equipment": "RE 18",
+      "date": 45192,
+      "lastHour": 9917,
+      "nowHour": 10262
+    },
+    {
+      "equipment": "RE 19",
+      "date": 45385,
+      "lastHour": 9005,
+      "nowHour": 9005
+    },
+    {
+      "equipment": "RE 20",
+      "date": 45198,
+      "lastHour": 8548,
+      "nowHour": 8548
+    },
+    {
+      "equipment": "RE 21",
+      "date": 45329,
+      "lastHour": 2558,
+      "nowHour": 2558
+    },
+    {
+      "equipment": "RE 22",
+      "date": 45359,
+      "lastHour": 2062,
+      "nowHour": 2062
+    },
+    {
+      "equipment": "RE 23",
+      "date": 45384,
+      "lastHour": 2312,
+      "nowHour": 2312
+    },
+    {
+      "equipment": "RE 24",
+      "date": 45407,
+      "lastHour": 2420,
+      "nowHour": 2420
+    },
+    {
+      "equipment": "RE 25",
+      "date": 45357,
+      "lastHour": 2148,
+      "nowHour": 2148
+    },
+    {
+      "equipment": "RE 26",
+      "date": 45287,
+      "lastHour": 2427,
+      "nowHour": 2427
+    },
+    {
+      "equipment": "RE 27",
+      "date": 45253,
+      "lastHour": 1485,
+      "nowHour": 1568
+    },
+    {
+      "equipment": "RE 28",
+      "date": 45359,
+      "lastHour": 2429,
+      "nowHour": 2429
+    },
+    {
+      "equipment": "RE 29",
+      "date": 45329,
+      "lastHour": 2137,
+      "nowHour": 2137
+    },
+    {
+      "equipment": "RE 30",
+      "date": 45254,
+      "lastHour": 578,
+      "nowHour": 578
+    },
+    {
+      "equipment": "RC 32",
+      "date": 43332,
+      "lastHour": 1520,
+      "nowHour": 1520
+    },
+    {
+      "equipment": "RC 39",
+      "date": 45406,
+      "lastHour": 448,
+      "nowHour": 235
+    },
+    {
+      "equipment": "RC 40",
+      "date": 45257,
+      "lastHour": 1729,
+      "nowHour": 1902
+    },
+    {
+      "equipment": "RC 42",
+      "date": 44812,
+      "lastHour": 957,
+      "nowHour": 1202
+    },
+    {
+      "equipment": "RC 49",
+      "date": 44768,
+      "lastHour": 2190,
+      "nowHour": 2261
+    },
+    {
+      "equipment": "RC 57",
+      "date": "08/06/2022",
+      "lastHour": 4508,
+      "nowHour": 4602
+    },
+    {
+      "equipment": "RC 28",
+      "date": 45257,
+      "lastHour": 756,
+      "nowHour": 756
+    },
+    {
+      "equipment": "RC 29",
+      "date": 45406,
+      "lastHour": 993,
+      "nowHour": 993
+    },
+    {
+      "equipment": "RC 30",
+      "date": "27/08/2023",
+      "lastHour": 1028,
+      "nowHour": 1028
+    },
+    {
+      "equipment": "RC 31",
+      "date": "29/08/2023",
+      "lastHour": 946,
+      "nowHour": 946
+    },
+    {
+      "equipment": "RC 33",
+      "date": 45212,
+      "lastHour": 3859,
+      "nowHour": 3859
+    },
+    {
+      "equipment": "RC 43",
+      "date": 45008,
+      "lastHour": 5634,
+      "nowHour": 5881
+    },
+    {
+      "equipment": "RC 45",
+      "date": 45008,
+      "lastHour": 9302,
+      "nowHour": 9325
+    },
+    {
+      "equipment": "RC 56",
+      "date": 45156,
+      "lastHour": 8931,
+      "nowHour": 9003
+    },
+    {
+      "equipment": "RC 12",
+      "date": 44699,
+      "lastHour": 5633,
+      "nowHour": 5633
+    },
+    {
+      "equipment": "RC 23",
+      "date": 44884,
+      "lastHour": 1156,
+      "nowHour": 1161
+    },
+    {
+      "equipment": "RC 24",
+      "date": 44199,
+      "lastHour": 4522,
+      "nowHour": 4537
+    },
+    {
+      "equipment": "RC 41",
+      "date": 44445,
+      "lastHour": 1078,
+      "nowHour": 1160
+    },
+    {
+      "equipment": "RC 35",
+      "date": 45071,
+      "lastHour": 8929,
+      "nowHour": 8929
+    },
+    {
+      "equipment": "RC 36",
+      "date": 44425,
+      "lastHour": 8163,
+      "nowHour": 8245
+    },
+    {
+      "equipment": "RC 38",
+      "date": 45173,
+      "lastHour": 8971,
+      "nowHour": 9089
+    },
+    {
+      "equipment": "RC 44",
+      "date": 44842,
+      "lastHour": 8745,
+      "nowHour": 8939
+    },
+    {
+      "equipment": "RC 46",
+      "date": 44199,
+      "lastHour": 674,
+      "nowHour": 674
+    },
+    {
+      "equipment": "RC 47",
+      "date": 45073,
+      "lastHour": 8024,
+      "nowHour": 8069
+    },
+    {
+      "equipment": "RC 50",
+      "date": 44830,
+      "lastHour": 4914,
+      "nowHour": 5002
+    },
+    {
+      "equipment": "RC 51",
+      "date": "21/11/20233",
+      "lastHour": 1595,
+      "nowHour": 1595
+    },
+    {
+      "equipment": "RC 52",
+      "date": 45188,
+      "lastHour": 4366,
+      "nowHour": 4366
+    },
+    {
+      "equipment": "RC 53",
+      "date": 45072,
+      "lastHour": 4754,
+      "nowHour": 4755
+    },
+    {
+      "equipment": "RC 54",
+      "date": 45185,
+      "lastHour": 4450,
+      "nowHour": 4450
+    },
+    {
+      "equipment": "RC 55",
+      "date": 45261,
+      "lastHour": 5957,
+      "nowHour": 5957
+    },
+    {
+      "equipment": "RC 58",
+      "date": 45165,
+      "lastHour": 3231,
+      "nowHour": 3231
+    },
+    {
+      "equipment": "RC 59",
+      "date": 45327,
+      "lastHour": 6823,
+      "nowHour": 6823
+    },
+    {
+      "equipment": "RC 60",
+      "date": 42948,
+      "lastHour": 2934,
+      "nowHour": 2934
+    },
+    {
+      "equipment": "RC 61",
+      "date": 44818,
+      "lastHour": 3324,
+      "nowHour": 3455
+    },
+    {
+      "equipment": "RC 62",
+      "date": 44942,
+      "lastHour": 76,
+      "nowHour": 185
+    },
+    {
+      "equipment": "RC 63",
+      "date": 45057,
+      "lastHour": 3524,
+      "nowHour": 3699
+    },
+    {
+      "equipment": "RC 64",
+      "date": 45084,
+      "lastHour": 4188,
+      "nowHour": 4517
+    },
+    {
+      "equipment": "RC 65",
+      "date": 45092,
+      "lastHour": 4800,
+      "nowHour": 4800
+    },
+    {
+      "equipment": "RC 66",
+      "date": 44345,
+      "lastHour": 4124,
+      "nowHour": 4391
+    },
+    {
+      "equipment": "RC 67",
+      "date": 45247,
+      "lastHour": 514,
+      "nowHour": 549
+    },
+    {
+      "equipment": "RC 68",
+      "date": 45182,
+      "lastHour": 247,
+      "nowHour": 445
+    },
+    {
+      "equipment": "RC 69",
+      "date": 45397,
+      "lastHour": 4875,
+      "nowHour": 4875
+    },
+    {
+      "equipment": "RC 70",
+      "date": 45185,
+      "lastHour": 4976,
+      "nowHour": 4976
+    },
+    {
+      "equipment": "RC 71",
+      "date": 45373,
+      "lastHour": 2726,
+      "nowHour": 2726
+    },
+    {
+      "equipment": "RC 72",
+      "date": 45189,
+      "lastHour": 344,
+      "nowHour": 444
+    },
+    {
+      "equipment": "RC 73",
+      "date": 45187,
+      "lastHour": 5432,
+      "nowHour": 5432
+    },
+    {
+      "equipment": "RC 74",
+      "date": 45009,
+      "lastHour": 3852,
+      "nowHour": 3884
+    },
+    {
+      "equipment": "RC 75",
+      "date": 45132,
+      "lastHour": 3753,
+      "nowHour": 3834
+    },
+    {
+      "equipment": "RC 76",
+      "date": 45351,
+      "lastHour": 5718,
+      "nowHour": 5718
+    },
+    {
+      "equipment": "RC 77",
+      "date": 45212,
+      "lastHour": 713,
+      "nowHour": 713
+    },
+    {
+      "equipment": "RC 78",
+      "date": 45118,
+      "lastHour": 4639,
+      "nowHour": 4838
+    },
+    {
+      "equipment": "RC 79",
+      "date": 45195,
+      "lastHour": 3471,
+      "nowHour": 3520
+    },
+    {
+      "equipment": "RC 80",
+      "date": 44747,
+      "lastHour": 3527,
+      "nowHour": 3773
+    },
+    {
+      "equipment": "RC 81",
+      "date": 45203,
+      "lastHour": 1184,
+      "nowHour": 1184
+    },
+    {
+      "equipment": "RC 82",
+      "date": 45218,
+      "lastHour": 3792,
+      "nowHour": 3792
+    },
+    {
+      "equipment": "RC 83",
+      "date": 44378,
+      "lastHour": 2330,
+      "nowHour": 2725
+    },
+    {
+      "equipment": "RC 84",
+      "date": 45181,
+      "lastHour": 4054,
+      "nowHour": 4054
+    },
+    {
+      "equipment": "RC 85",
+      "date": 45229,
+      "lastHour": 3988,
+      "nowHour": 3988
+    },
+    {
+      "equipment": "RC 86",
+      "date": 45176,
+      "lastHour": 3864,
+      "nowHour": 3864
+    },
+    {
+      "equipment": "RC 87",
+      "date": 45176,
+      "lastHour": 3041,
+      "nowHour": 3319
+    },
+    {
+      "equipment": "RC 88",
+      "date": 45181,
+      "lastHour": 3825,
+      "nowHour": 3825
+    },
+    {
+      "equipment": "RC 89",
+      "date": 45231,
+      "lastHour": 3762,
+      "nowHour": 3762
+    },
+    {
+      "equipment": "RC 90",
+      "date": 45239,
+      "lastHour": 4022,
+      "nowHour": 4022
+    },
+    {
+      "equipment": "RC 91",
+      "date": 45247,
+      "lastHour": 3335,
+      "nowHour": 3335
+    },
+    {
+      "equipment": "RC 92",
+      "date": 44940,
+      "lastHour": 2022,
+      "nowHour": 2667
+    },
+    {
+      "equipment": "RC 93",
+      "date": 45146,
+      "lastHour": 1914,
+      "nowHour": 1952
+    },
+    {
+      "equipment": "RC 94",
+      "date": 45214,
+      "lastHour": 2396,
+      "nowHour": 2396
+    },
+    {
+      "equipment": "RC 95",
+      "date": 45064,
+      "lastHour": 1647,
+      "nowHour": 1647
+    },
+    {
+      "equipment": "RC 96",
+      "date": 45064,
+      "lastHour": 2111,
+      "nowHour": 2111
+    },
+    {
+      "equipment": "RC 97",
+      "date": 45212,
+      "lastHour": 2173,
+      "nowHour": 2378
+    },
+    {
+      "equipment": "RC 98",
+      "date": 45103,
+      "lastHour": 1544,
+      "nowHour": 2062
+    },
+    {
+      "equipment": "RC 99",
+      "date": 45073,
+      "lastHour": 1717,
+      "nowHour": 2367
+    },
+    {
+      "equipment": "RC 100",
+      "date": 45197,
+      "lastHour": 2205,
+      "nowHour": 2205
+    },
+    {
+      "equipment": "RC 101",
+      "date": 45065,
+      "lastHour": 1596,
+      "nowHour": 1596
+    },
+    {
+      "equipment": "RC 103",
+      "date": 45407,
+      "lastHour": 1563,
+      "nowHour": 1563
+    },
+    {
+      "equipment": "RC 104",
+      "date": 45407,
+      "lastHour": 1507,
+      "nowHour": 1507
+    },
+    {
+      "equipment": "RC 105",
+      "date": 44744,
+      "lastHour": 99,
+      "nowHour": 265
+    },
+    {
+      "equipment": "RC 106",
+      "date": 45180,
+      "lastHour": 1078,
+      "nowHour": 1078
+    },
+    {
+      "equipment": "RC 107",
+      "date": 44860,
+      "lastHour": 495,
+      "nowHour": 814
+    },
+    {
+      "equipment": "RC 108",
+      "date": 45194,
+      "lastHour": 991,
+      "nowHour": 991
+    },
+    {
+      "equipment": "RC 109",
+      "date": 45252,
+      "lastHour": 1044,
+      "nowHour": 1044
+    },
+    {
+      "equipment": "RC 110",
+      "date": 45194,
+      "lastHour": 940,
+      "nowHour": 940
+    },
+    {
+      "equipment": "RC 112",
+      "date": 45176,
+      "lastHour": 1008,
+      "nowHour": 1008
+    },
+    {
+      "equipment": "RC 113",
+      "date": 45176,
+      "lastHour": 893,
+      "nowHour": 893
+    },
+    {
+      "equipment": "RC 114",
+      "date": 45406,
+      "lastHour": 1128,
+      "nowHour": 1128
+    },
+    {
+      "equipment": "RC 115",
+      "date": 45194,
+      "lastHour": 966,
+      "nowHour": 966
+    },
+    {
+      "equipment": "RC 116",
+      "date": 45189,
+      "lastHour": 1115,
+      "nowHour": 1115
+    },
+    {
+      "equipment": "RC 117",
+      "date": 45176,
+      "lastHour": 1024,
+      "nowHour": 1024
+    },
+    {
+      "equipment": "RC 118",
+      "date": 45193,
+      "lastHour": 1027,
+      "nowHour": 1027
+    },
+    {
+      "equipment": "RC 119",
+      "date": 45192,
+      "lastHour": 493,
+      "nowHour": 493
+    },
+    {
+      "equipment": "RC 120",
+      "date": 45179,
+      "lastHour": 1012,
+      "nowHour": 1012
+    },
+    {
+      "equipment": "RC 121",
+      "date": 45176,
+      "lastHour": 1008,
+      "nowHour": 1008
+    },
+    {
+      "equipment": "CM 03",
+      "date": 45167,
+      "lastHour": 13792,
+      "nowHour": 13792
+    },
+    {
+      "equipment": "CM 04",
+      "date": 45110,
+      "lastHour": 356391,
+      "nowHour": 356391
+    },
+    {
+      "equipment": "CM 08",
+      "date": "01/02/2024",
+      "lastHour": 262529,
+      "nowHour": 262529
+    },
+    {
+      "equipment": "CM 09",
+      "date": "14/07/2023",
+      "lastHour": 372590,
+      "nowHour": 372590
+    },
+    {
+      "equipment": "CM 10",
+      "date": "06/02/2024",
+      "lastHour": 349526,
+      "nowHour": 349526
+    },
+    {
+      "equipment": "CB 22",
+      "date": 45086,
+      "lastHour": 207288,
+      "nowHour": 207288
+    },
+    {
+      "equipment": "CB 56",
+      "date": 45201,
+      "lastHour": 281068,
+      "nowHour": 281068
+    },
+    {
+      "equipment": "CB 57",
+      "date": 44163,
+      "lastHour": 187376,
+      "nowHour": 202105
+    },
+    {
+      "equipment": "CB 60",
+      "date": 45076,
+      "lastHour": 299465,
+      "nowHour": 299465
+    },
+    {
+      "equipment": "CB 62",
+      "date": 45357,
+      "lastHour": 328072,
+      "nowHour": 328072
+    },
+    {
+      "equipment": "CB 64",
+      "date": 45134,
+      "lastHour": 215099,
+      "nowHour": 231622
+    },
+    {
+      "equipment": "CB 66",
+      "date": 44932,
+      "lastHour": 129655,
+      "nowHour": 177571
+    },
+    {
+      "equipment": "CB 68",
+      "date": 45121,
+      "lastHour": 264227,
+      "nowHour": 264227
+    },
+    {
+      "equipment": "CB 72",
+      "date": 45238,
+      "lastHour": 296718,
+      "nowHour": 296718
+    },
+    {
+      "equipment": "CB 73",
+      "date": 45238,
+      "lastHour": 234862,
+      "nowHour": 238841
+    },
+    {
+      "equipment": "CB 76",
+      "date": 45330,
+      "lastHour": 238453,
+      "nowHour": 238453
+    },
+    {
+      "equipment": "CB 77",
+      "date": 45204,
+      "lastHour": 162918,
+      "nowHour": 162918
+    },
+    {
+      "equipment": "CB 84",
+      "date": 45405,
+      "lastHour": 273373,
+      "nowHour": 273373
+    },
+    {
+      "equipment": "CB 85",
+      "date": 45170,
+      "lastHour": 238008,
+      "nowHour": 238008
+    },
+    {
+      "equipment": "CB 89",
+      "date": 45418,
+      "lastHour": 202905,
+      "nowHour": 202905
+    },
+    {
+      "equipment": "CC 02",
+      "date": "26/02/2024",
+      "lastHour": 136364,
+      "nowHour": 136364
+    },
+    {
+      "equipment": "CC 03",
+      "date": "05/01/2024",
+      "lastHour": 55700,
+      "nowHour": 55700
+    },
+    {
+      "equipment": "CC 04",
+      "date": "29/02/2024",
+      "lastHour": 74339,
+      "nowHour": 76558
+    },
+    {
+      "equipment": "CC 05",
+      "date": "45339",
+      "lastHour": 129944,
+      "nowHour": 133496
+    },
+    {
+      "equipment": "CC 06",
+      "date": "28/11/2022",
+      "lastHour": 97816,
+      "nowHour": 106310
+    },
+    {
+      "equipment": "CC 07",
+      "date": "26/12/2023",
+      "lastHour": 119885,
+      "nowHour": 119885
+    },
+    {
+      "equipment": "CC 08",
+      "date": 45097,
+      "lastHour": 91410,
+      "nowHour": 92920
+    },
+    {
+      "equipment": "CC 09",
+      "date": 45356,
+      "lastHour": 111362,
+      "nowHour": 111362
+    },
+    {
+      "equipment": "CC 10",
+      "date": 45357,
+      "lastHour": 122317,
+      "nowHour": 122317
+    },
+    {
+      "equipment": "CC 11",
+      "date": 45408,
+      "lastHour": 113599,
+      "nowHour": 113599
+    },
+    {
+      "equipment": "CP 09",
+      "date": 45356,
+      "lastHour": 112719,
+      "nowHour": 112719
+    },
+    {
+      "equipment": "CP 11",
+      "date": 44802,
+      "lastHour": 73783,
+      "nowHour": 73783
+    },
+    {
+      "equipment": "CP 12",
+      "date": 44790,
+      "lastHour": 55556,
+      "nowHour": 55556
+    },
+    {
+      "equipment": "CP 13",
+      "date": 45217,
+      "lastHour": 70652,
+      "nowHour": 70652
+    },
+    {
+      "equipment": "CP 14",
+      "date": 45185,
+      "lastHour": 178134,
+      "nowHour": 178134
+    },
+    {
+      "equipment": "CP 15",
+      "date": 45216,
+      "lastHour": 105056,
+      "nowHour": 106842
+    },
+    {
+      "equipment": "CP 17",
+      "date": 45185,
+      "lastHour": 93282,
+      "nowHour": 93282
+    },
+    {
+      "equipment": "CP 18",
+      "date": 45069,
+      "lastHour": 403,
+      "nowHour": 403
+    },
+    {
+      "equipment": "CP 19",
+      "date": 45091,
+      "lastHour": 56852,
+      "nowHour": 66829
+    },
+    {
+      "equipment": "CP 20",
+      "date": 45259,
+      "lastHour": 48901,
+      "nowHour": 48901
+    },
+    {
+      "equipment": "CP 21",
+      "date": 45080,
+      "lastHour": 90062,
+      "nowHour": 90536
+    },
+    {
+      "equipment": "CP 22",
+      "date": 45213,
+      "lastHour": 89473,
+      "nowHour": 89473
+    },
+    {
+      "equipment": "CL 01",
+      "date": 44785,
+      "lastHour": 44,
+      "nowHour": 1991
+    },
+    {
+      "equipment": "CL 02",
+      "date": 45131,
+      "lastHour": 74669,
+      "nowHour": 79134
+    },
+    {
+      "equipment": "CL 03",
+      "date": 45173,
+      "lastHour": 195180,
+      "nowHour": 195180
+    },
+    {
+      "equipment": "CL 04",
+      "date": 45139,
+      "lastHour": 86398,
+      "nowHour": 86398
+    },
+    {
+      "equipment": "CL 06",
+      "date": 45386,
+      "lastHour": 201687,
+      "nowHour": 201687
+    },
+    {
+      "equipment": "CL 07",
+      "date": 45362,
+      "lastHour": 202559,
+      "nowHour": 202559
+    },
+    {
+      "equipment": "CL 08",
+      "date": 45129,
+      "lastHour": 287209,
+      "nowHour": 287209
+    },
+    {
+      "equipment": "CL 09",
+      "date": 45296,
+      "lastHour": 298315,
+      "nowHour": 298315
+    },
+    {
+      "equipment": "CE 01",
+      "date": 45182,
+      "lastHour": 45182,
+      "nowHour": 103142
+    },
+    {
+      "equipment": "CE 02",
+      "date": 45200,
+      "lastHour": 45200,
+      "nowHour": 36657
+    },
+    {
+      "equipment": "CE 04",
+      "date": 45159,
+      "lastHour": 45159,
+      "nowHour": 154628
+    },
+    {
+      "equipment": "CE 05",
+      "date": 45372,
+      "lastHour": 45372,
+      "nowHour": 89880
+    },
+    {
+      "equipment": "PC 01",
+      "date": 45279,
+      "lastHour": 988,
+      "nowHour": 988
+    },
+    {
+      "equipment": "PC 02",
+      "date": 45260,
+      "lastHour": 633,
+      "nowHour": 633
+    },
+    {
+      "equipment": "PC 17",
+      "date": 45316,
+      "lastHour": 12342,
+      "nowHour": 12342
+    },
+    {
+      "equipment": "PC 18",
+      "date": 45016,
+      "lastHour": 16067,
+      "nowHour": 16070
+    },
+    {
+      "equipment": "PC 19",
+      "date": 45294,
+      "lastHour": 15412,
+      "nowHour": 15412
+    },
+    {
+      "equipment": "PC 20",
+      "date": 45255,
+      "lastHour": 16800,
+      "nowHour": 16800
+    },
+    {
+      "equipment": "PC 22",
+      "date": 44873,
+      "lastHour": 14309,
+      "nowHour": 14689
+    },
+    {
+      "equipment": "PC 23",
+      "date": 45205,
+      "lastHour": 9437,
+      "nowHour": 9437
+    },
+    {
+      "equipment": "PC 25",
+      "date": 45194,
+      "lastHour": 10559,
+      "nowHour": 10559
+    },
+    {
+      "equipment": "PC 26",
+      "date": 45214,
+      "lastHour": 10240,
+      "nowHour": 10493
+    },
+    {
+      "equipment": "PC 27",
+      "date": 45279,
+      "lastHour": 11320,
+      "nowHour": 11606
+    },
+    {
+      "equipment": "MS 01",
+      "date": 44638,
+      "lastHour": 1667,
+      "nowHour": 1775
+    },
+    {
+      "equipment": "MS 02",
+      "date": 44789,
+      "lastHour": 2055,
+      "nowHour": 2156
+    },
+    {
+      "equipment": "MS 03",
+      "date": 45113,
+      "lastHour": 4405,
+      "nowHour": 4928
+    },
+    {
+      "equipment": "MS 04",
+      "date": 45059,
+      "lastHour": 7403,
+      "nowHour": 7884
+    },
+    {
+      "equipment": "MS 05",
+      "date": 44631,
+      "lastHour": 1707,
+      "nowHour": 2188
+    },
+    {
+      "equipment": "MS 06",
+      "date": 45165,
+      "lastHour": 7760,
+      "nowHour": 7760
+    },
+    {
+      "equipment": "MS 07",
+      "date": 44624,
+      "lastHour": 397,
+      "nowHour": 621
+    },
+    {
+      "equipment": "MS 08",
+      "date": 44690,
+      "lastHour": 9450,
+      "nowHour": 9728
+    },
+    {
+      "equipment": "MS 09",
+      "date": 44309,
+      "lastHour": 5161,
+      "nowHour": 5161
+    },
+    {
+      "equipment": "MS 10",
+      "date": 44785,
+      "lastHour": 0,
+      "nowHour": 37
+    },
+    {
+      "equipment": "MS 11",
+      "date": 44865,
+      "lastHour": 5940,
+      "nowHour": 5940
+    },
+    {
+      "equipment": "MS 12",
+      "date": 44842,
+      "lastHour": 4609,
+      "nowHour": 5160
+    },
+    {
+      "equipment": "MS 14",
+      "date": 44684,
+      "lastHour": 8069,
+      "nowHour": 8069
+    },
+    {
+      "equipment": "MS 15",
+      "date": 45032,
+      "lastHour": 371,
+      "nowHour": 371
+    },
+    {
+      "equipment": "CG 01",
+      "date": "30/10/2023",
+      "lastHour": 320736,
+      "nowHour": 325956
+    },
+    {
+      "equipment": "CG 03",
+      "date": "02/01/2024",
+      "lastHour": 438242,
+      "nowHour": 439242
+    },
+    {
+      "equipment": "CG 04",
+      "date": "07/02/2024",
+      "lastHour": 309826,
+      "nowHour": 309826
+    },
+    {
+      "equipment": "CG 05",
+      "date": "29/12/2023",
+      "lastHour": 242941,
+      "nowHour": 242941
+    },
+    {
+      "equipment": "CG 06",
+      "date": "25/03/2024",
+      "lastHour": 82622,
+      "nowHour": 82622
+    },
+    {
+      "equipment": "GG 01",
+      "date": 45189,
+      "lastHour": 200,
+      "nowHour": 200
+    },
+    {
+      "equipment": "GG 02",
+      "date": 44680,
+      "lastHour": 5396,
+      "nowHour": 5396
+    },
+    {
+      "equipment": "GG 03",
+      "date": 44531,
+      "lastHour": 14712,
+      "nowHour": 14734
+    },
+    {
+      "equipment": "GG 04",
+      "date": 45001,
+      "lastHour": 1064,
+      "nowHour": 1312
+    },
+    {
+      "equipment": "GG 05",
+      "date": 45357,
+      "lastHour": 2101,
+      "nowHour": 2101
+    },
+    {
+      "equipment": "GG 07",
+      "date": 44637,
+      "lastHour": 1103,
+      "nowHour": 1180
+    },
+    {
+      "equipment": "GG 08",
+      "date": 45401,
+      "lastHour": 3031,
+      "nowHour": 3031
+    },
+    {
+      "equipment": "GG 09",
+      "date": 45394,
+      "lastHour": 2221,
+      "nowHour": 2221
+    },
+    {
+      "equipment": "GG 11",
+      "date": 44834,
+      "lastHour": 1648,
+      "nowHour": 1648
+    },
+    {
+      "equipment": "GG 12",
+      "date": 43179,
+      "lastHour": 480,
+      "nowHour": 616
+    },
+    {
+      "equipment": "GG 14",
+      "date": 45209,
+      "lastHour": 2,
+      "nowHour": 2
+    },
+    {
+      "equipment": "GG 15",
+      "date": 45106,
+      "lastHour": 1425,
+      "nowHour": 1727
+    },
+    {
+      "equipment": "GG 16",
+      "date": 45198,
+      "lastHour": 2336,
+      "nowHour": 2336
+    },
+    {
+      "equipment": "GG 22",
+      "date": 44717,
+      "lastHour": 212,
+      "nowHour": 218
+    },
+    {
+      "equipment": "GG 24",
+      "date": 44994,
+      "lastHour": 0,
+      "nowHour": 45
+    },
+    {
+      "equipment": "GG 26",
+      "date": 45363,
+      "lastHour": 1,
+      "nowHour": 1
+    },
+    {
+      "equipment": "VL 19",
+      "date": 44589,
+      "lastHour": 167188,
+      "nowHour": 169341
+    },
+    {
+      "equipment": "VL 32",
+      "date": 45344,
+      "lastHour": 141316,
+      "nowHour": 141316
+    },
+    {
+      "equipment": "VL 33",
+      "date": 45366,
+      "lastHour": 117693,
+      "nowHour": 117693
+    },
+    {
+      "equipment": "VL 34",
+      "date": 45323,
+      "lastHour": 77701,
+      "nowHour": 77701
+    },
+    {
+      "equipment": "VL 35",
+      "date": 45365,
+      "lastHour": 136745,
+      "nowHour": 136745
+    },
+    {
+      "equipment": "VL 36",
+      "date": 45338,
+      "lastHour": 139738,
+      "nowHour": 139738
+    },
+    {
+      "equipment": "VL 37",
+      "date": 45411,
+      "lastHour": 115836,
+      "nowHour": 115836
+    },
+    {
+      "equipment": "VL 38",
+      "date": 45366,
+      "lastHour": 156938,
+      "nowHour": 156938
+    },
+    {
+      "equipment": "VL 39",
+      "date": 45339,
+      "lastHour": 159041,
+      "nowHour": 144391
+    },
+    {
+      "equipment": "VL 40",
+      "date": 45343,
+      "lastHour": 126827,
+      "nowHour": 126827
+    },
+    {
+      "equipment": "VL 41",
+      "date": 45329,
+      "lastHour": 127271,
+      "nowHour": 127271
+    },
+    {
+      "equipment": "VL 42",
+      "date": 45358,
+      "lastHour": 119956,
+      "nowHour": 119956
+    },
+    {
+      "equipment": "VL 43",
+      "date": 45355,
+      "lastHour": 142495,
+      "nowHour": 142495
+    },
+    {
+      "equipment": "VL 44",
+      "date": 45411,
+      "lastHour": 105129,
+      "nowHour": 105129
+    },
+    {
+      "equipment": "VL 45",
+      "date": 45401,
+      "lastHour": 114628,
+      "nowHour": 114628
+    },
+    {
+      "equipment": "VL 46",
+      "date": 45386,
+      "lastHour": 118430,
+      "nowHour": 118430
+    },
+    {
+      "equipment": "VL 61",
+      "date": 45287,
+      "lastHour": 109432,
+      "nowHour": 109432
+    },
+    {
+      "equipment": "VL 02",
+      "date": 45258,
+      "lastHour": 155234,
+      "nowHour": 155234
+    },
+    {
+      "equipment": "VL 12",
+      "date": 45287,
+      "lastHour": 142511,
+      "nowHour": 142511
+    },
+    {
+      "equipment": "VL 13",
+      "date": 45183,
+      "lastHour": 141949,
+      "nowHour": 141949
+    },
+    {
+      "equipment": "VL 47",
+      "date": 45366,
+      "lastHour": 26290,
+      "nowHour": 26290
+    },
+    {
+      "equipment": "VL 48",
+      "date": 45366,
+      "lastHour": 83837,
+      "nowHour": 83837
+    },
+    {
+      "equipment": "VL 49",
+      "date": 45321,
+      "lastHour": 71292,
+      "nowHour": 71292
+    },
+    {
+      "equipment": "VL 50",
+      "date": 45390,
+      "lastHour": 62401,
+      "nowHour": 62401
+    },
+    {
+      "equipment": "VL 51",
+      "date": 45338,
+      "lastHour": 143762,
+      "nowHour": 143762
+    },
+    {
+      "equipment": "VL 52",
+      "date": 45315,
+      "lastHour": 78779,
+      "nowHour": 78779
+    },
+    {
+      "equipment": "VL 53",
+      "date": 45409,
+      "lastHour": 97147,
+      "nowHour": 97147
+    },
+    {
+      "equipment": "VL 54",
+      "date": 45254,
+      "lastHour": 69220,
+      "nowHour": 69220
+    },
+    {
+      "equipment": "VL 55",
+      "date": 45252,
+      "lastHour": 68007,
+      "nowHour": 68007
+    },
+    {
+      "equipment": "VL 56",
+      "date": 44818,
+      "lastHour": 34169,
+      "nowHour": 34169
+    },
+    {
+      "equipment": "VL 57",
+      "date": 45336,
+      "lastHour": 67128,
+      "nowHour": 67128
+    },
+    {
+      "equipment": "VL 58",
+      "date": 45318,
+      "lastHour": 75319,
+      "nowHour": 75319
+    },
+    {
+      "equipment": "VL 59",
+      "date": 45289,
+      "lastHour": 31142,
+      "nowHour": 31142
+    },
+    {
+      "equipment": "VL 60",
+      "date": 45381,
+      "lastHour": 160469,
+      "nowHour": 160469
+    },
+    {
+      "equipment": "LC 01",
+      "date": 45103,
+      "lastHour": 747312,
+      "nowHour": 747497
+    },
+    {
+      "equipment": "LC 02",
+      "date": 45390,
+      "lastHour": 49439,
+      "nowHour": 49439
+    },
+    {
+      "equipment": "CT 01",
+      "date": 45399,
+      "lastHour": 4282023,
+      "nowHour": 428203
+    },
+    {
+      "equipment": "DC 01",
+      "date": 45103,
+      "lastHour": 130000,
+      "nowHour": 130000
+    },
+    {
+      "equipment": "CA 02",
+      "date": 45337,
+      "lastHour": 7610,
+      "nowHour": 7610
+    },
+    {
+      "equipment": "EP 01",
+      "date": 45139,
+      "lastHour": 2397,
+      "nowHour": 2397
+    },
+    {
+      "equipment": "EP 02",
+      "date": 45289,
+      "lastHour": 6009,
+      "nowHour": 6009
+    },
+    {
+      "equipment": "MC 02",
+      "date": 45258,
+      "lastHour": 4476,
+      "nowHour": 4517
+    },
+    {
+      "equipment": "MC 03",
+      "date": 45169,
+      "lastHour": 4203,
+      "nowHour": 4203
+    },
+    {
+      "equipment": "MC 04",
+      "date": 45007,
+      "lastHour": 3742,
+      "nowHour": 3743
+    },
+    {
+      "equipment": "RM 01",
+      "date": 44631,
+      "lastHour": 622,
+      "nowHour": 976
+    },
+    {
+      "equipment": "RM 02",
+      "date": 45161,
+      "lastHour": 5166,
+      "nowHour": 5232
+    },
+    {
+      "equipment": "RM 03",
+      "date": 45190,
+      "lastHour": 500,
+      "nowHour": 500
+    },
+    {
+      "equipment": "RM 04",
+      "date": 45182,
+      "lastHour": 504,
+      "nowHour": 504
+    },
+    {
+      "equipment": "FA 01",
+      "date": 44793,
+      "lastHour": 3391,
+      "nowHour": 3530
+    },
+    {
+      "equipment": "CR 01",
+      "date": 45136,
+      "lastHour": 211737,
+      "nowHour": 211737
+    },
+    {
+      "equipment": "MP 01",
+      "date": 45225,
+      "lastHour": 553,
+      "nowHour": 877
+    },
+    {
+      "equipment": "MP 02",
+      "date": 45332,
+      "lastHour": 5900,
+      "nowHour": 6001
+    },
+    {
+      "equipment": "GT 02",
+      "date": 45192,
+      "lastHour": 2000,
+      "nowHour": 2000
+    },
+    {
+      "equipment": "SJ 01",
+      "date": 45224,
+      "lastHour": 5508,
+      "nowHour": 5508
+    },
+    {
+      "equipment": "HS 01",
+      "date": 45337,
+      "lastHour": 778,
+      "nowHour": 778
+    },
+    {
+      "equipment": "CD 01",
+      "date": 45152,
+      "lastHour": 183316,
+      "nowHour": 183316
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+  mysql:
+    image: mysql:8.0
+    ports:
+      - '3306:3306'
+    environment:
+      - MYSQL_ROOT_PASSWORD=docker
+      - MYSQL_DATABASE=smart_local  # Altere para o nome do seu banco de dados
+      - MYSQL_USER=docker  # Altere para o nome de usuário correto
+      - MYSQL_PASSWORD=docker
+    volumes:
+      - banco_smart_local:/var/lib/mysql  # Volume persistente para dados do banco
+
+volumes:
+  banco_smart_local:  # Volume persistente para dados do banco

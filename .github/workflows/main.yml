@@ -1,0 +1,132 @@
+on:
+  push:
+    branches:
+      - dev
+name: Deploy website on push
+jobs:
+  web-deploy:
+      name: 🎉 Deploy
+      runs-on: ubuntu-latest
+      steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 18
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      - name: 🔨 Build Project
+        run: |
+          npm ci
+          npx prisma generate
+          NODE_OPTIONS="--max-old-space-size=4096" npm run build
+          mkdir deploy
+          mv dist deploy
+          mv prisma deploy
+          mv package.json deploy
+          mv package-lock.json deploy
+          mv tsconfig.json deploy
+
+      - name: List output files
+        run: find deploy/ -print
+
+      - name: 📂 Sync files
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+            username: 'root'
+            server: '161.35.123.160'
+            password: ${{ secrets.SSH_PASSWORD }}
+            local_path: './deploy/*'
+            remote_path: '/var/www/api-homolog.smartnewservices.com.br'
+
+      - name: 🚀 Run commands on remote server
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+            host: '161.35.123.160'
+            username: 'root'
+            password: ${{ secrets.SSH_PASSWORD }}
+            port: 22
+            script: |
+              cd /var/www/api-homolog.smartnewservices.com.br
+              npm ci
+# on:
+#   push:
+#     branches:
+#       - dev
+# name: Deploy website on push
+# jobs:
+#   web-deploy:
+#     name: 🎉 Deploy
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: 🚚 Get latest code
+#       uses: actions/checkout@v4
+
+#     - name: Use Node.js 18
+#       uses: actions/setup-node@v4
+#       with:
+#         node-version: '18'
+
+#     - name: Cache node modules
+#       uses: actions/cache@v3
+#       with:
+#         path: ~/.npm
+#         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+#         restore-keys: |
+#           ${{ runner.os }}-node-
+
+#     - name: Cache build artifacts
+#       uses: actions/cache@v3
+#       with:
+#         path: ./dist
+#         key: ${{ runner.os }}-build-${{ github.sha }}
+#         restore-keys: |
+#           ${{ runner.os }}-build-
+
+#     - name: 🔍 Check for Prisma changes
+#       id: prisma-changes
+#       run: |
+#         if git diff --name-only HEAD^ HEAD | grep -q "^prisma/"; then
+#           echo "Prisma changes detected"
+#           echo "has_changes=true" >> $GITHUB_OUTPUT
+#         else
+#           echo "No Prisma changes detected"
+#           echo "has_changes=false" >> $GITHUB_OUTPUT
+#         fi
+
+#     - name: 🔨 Build Project
+#       run: |
+#         npm ci
+#         npx prisma generate
+#         NODE_OPTIONS="--max-old-space-size=4096" npm run build
+#         mkdir deploy
+#         mv dist deploy
+#         mv package.json deploy
+#         mv package-lock.json deploy
+#         if [ "${{ steps.prisma-changes.outputs.has_changes }}" = "true" ]; then
+#           mv prisma deploy
+#         fi
+
+#     - name: List output files
+#       run: find deploy/ -print
+
+#     - name: 📂 Sync files
+#       uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+#       with:
+#         username: 'root'
+#         server: '161.35.123.160'
+#         password: ${{ secrets.SSH_PASSWORD }}
+#         local_path: './deploy/*'
+#         remote_path: '/var/www/api-homolog.smartnewservices.com.br'
+
+#     - name: 🚀 Run commands on remote server
+#       uses: appleboy/ssh-action@v0.1.5
+#       with:
+#         host: '161.35.123.160'
+#         username: 'root'
+#         password: ${{ secrets.SSH_PASSWORD }}
+#         port: 22
+#         script: |
+#           cd /var/www/api-homolog.smartnewservices.com.br
+#           npm ci --prefer-offline --no-audit

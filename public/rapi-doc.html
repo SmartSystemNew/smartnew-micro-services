@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>API SmartNew</title>
+  <script src="https://unpkg.com/rapidoc/dist/rapidoc-min.js"></script>
+  <style>
+    body {
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
+    rapi-doc {
+      height: 100vh;
+    }
+
+    /* Cores dos métodos HTTP */
+    rapi-doc .method-get {
+      background-color: #2ecc71 !important;
+      color: white !important;
+    }
+
+    rapi-doc .method-post {
+      background-color: #3498db !important;
+      color: white !important;
+    }
+
+    rapi-doc .method-put {
+      background-color: #f1c40f !important;
+      color: black !important;
+    }
+
+    rapi-doc .method-delete {
+      background-color: #e74c3c !important;
+      color: white !important;
+    }
+
+    /* Personalizar o tema dark */
+    rapi-doc {
+      --bg-color: #1a1a1a;
+      /* Fundo mais escuro */
+      --text-color: #e0e0e0;
+      /* Texto claro */
+    }
+  </style>
+</head>
+
+<body>
+  <rapi-doc
+    spec-url="/api-json"
+    render-style="focused"
+    show-header="false"
+    allow-try="true"
+    show-info="true">
+    <!-- <img slot="nav-logo" src="https://sistemas.smartnewsystem.com.br/_lib/libraries/grp/metronic/favicon.ico" /> -->
+  </rapi-doc>
+</body>
+
+</html>
