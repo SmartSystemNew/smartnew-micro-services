@@ -375,7 +375,7 @@ import MaterialBoundRepository from 'src/repositories/material-bound-repository'
 import MaterialBoundRepositoryPrisma from 'src/repositories/prisma/material-bound-repository-prisma';
 import LogChecklistRepository from 'src/repositories/log-checklist-repository';
 import LogChecklistRepositoryPrisma from 'src/repositories/prisma/log-checklist-repository-prisma';
-import { BankBoundService } from 'src/service/bank.bound.service';
+
 import {
   ContextService,
   //RequestContextService
@@ -384,6 +384,7 @@ import LogDescriptionMaintenancePlanningRepository from 'src/repositories/log-de
 import LogDescriptionMaintenancePlanningRepositoryPrisma from 'src/repositories/prisma/log-description-maintenance-planning-repository-prisma';
 import BuyRelaunchRepository from 'src/repositories/buy-relaunch-repository';
 import BuyRelaunchRepositoryPrisma from 'src/repositories/prisma/buy-relaunch-repository-prisma';
+import BankBoundService from 'src/service/bank.bound.service';
 
 const tenantRepositories = [
   createTenantRepositoryProvider(

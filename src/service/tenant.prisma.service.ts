@@ -8,8 +8,8 @@ import {
 import { PrismaClient } from '@prisma/client';
 import { ENVService } from 'src/service/env.service';
 //import { z } from 'zod';
-import { BankBoundService } from './bank.bound.service';
 import { ContextService } from './request-context.service';
+import BankBoundService from './bank.bound.service';
 //import { Request } from 'express';
 
 //@Injectable({ scope: Scope.REQUEST }) // ou simplesmente remova o escopo
