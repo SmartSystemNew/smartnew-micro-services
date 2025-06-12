@@ -35,7 +35,6 @@ export default class DescriptionPlanningService
   });
 
   async onModuleInit() {
-    console.log(this.envService.NODE_ENV);
     if (this.envService.NODE_ENV === 'service') {
       console.log('CronJobs da smart');
       await this.initializeCronJobs(this.smartPrisma);
@@ -308,6 +307,146 @@ export default class DescriptionPlanningService
           cronJob: 'created',
         };
       } else {
+        // Busca o CronJob existente
+        let existingJob;
+        try {
+          existingJob = this.schedulerRegistry.getCronJob(
+            `${validExist.id}-${validExist.chave_rotina}`,
+          );
+        } catch (error) {
+          console.log(
+            `CronJob ${validExist.id}-${validExist.chave_rotina} não encontrado.`,
+          );
+        }
+
+        // Para e deleta o CronJob existente, se houver
+        if (existingJob) {
+          existingJob.stop();
+          this.schedulerRegistry.deleteCronJob(
+            `${validExist.id}-${validExist.chave_rotina}`,
+          );
+          console.log(
+            `CronJob ${validExist.id}-${validExist.chave_rotina} removido.`,
+          );
+        }
+
+        let cronExpression: string;
+        let jobKey: string;
+        let hora: string;
+        const tipo = taskPlanning?.periodicity?.descricao;
+        const { descriptionPlanMaintenance } = taskPlanning;
+        if (tipo === null) {
+          throw new NotFoundException('Tipo de periodicidade não encontrado');
+        }
+
+        console.log(tipo);
+
+        switch (tipo) {
+          case 'HORA':
+            // Executa a cada 'valor' horas
+            // Usa o horário de base definido pelo modelo
+            const horaBase = this.dateService.dayjsAddTree(new Date());
+            const intervaloHoras = taskPlanning.periodicidade_uso;
+
+            // Define os minutos e a hora de início
+            const minutos = horaBase.minute();
+
+            // Cria uma expressão cron que execute a cada 'intervaloHoras' horas nos minutos definidos
+            cronExpression = `${minutos} */${intervaloHoras} * * *`;
+
+            //cronExpression = `0 */${model.periocidade} * * *`;
+            jobKey = `planejamento-${descriptionPlanMaintenance.company.razao_social}-rotina-hora-${descriptionPlanMaintenance.family.familia}-${descriptionPlanMaintenance.descricao}`;
+            break;
+
+          case 'DIA':
+            // Executa todo dia às 'hora:00'
+            hora = this.dateService
+              .dayjsAddTree(taskPlanning.data_base)
+              .format('HH:mm');
+
+            cronExpression = `${hora.split(':')[1]} ${
+              hora.split(':')[0]
+            } * * *`;
+            jobKey = `planejamento-${descriptionPlanMaintenance.company.razao_social}-rotina-dia-${descriptionPlanMaintenance.family.familia}-${descriptionPlanMaintenance.descricao}`;
+            break;
+
+          case 'SEMANA':
+            // Executa toda semana no dia 'diaDaSemana' e horário 'hora:00'
+            // O dia da semana vai de 0 (domingo) a 6 (sábado)
+            hora = this.dateService
+              .dayjsAddTree(taskPlanning.data_base)
+              .format('HH:mm');
+
+            cronExpression = `${hora.split(':')[1]} ${hora.split(':')[0]} * * ${
+              taskPlanning.periodicidade_uso
+            }`;
+            jobKey = `planejamento-${descriptionPlanMaintenance.company.razao_social}-rotina-semanal-${descriptionPlanMaintenance.family.familia}-${descriptionPlanMaintenance.descricao}`;
+            break;
+
+          case 'MES':
+            // Executa todo mês no dia 'diaDoMes' e horário 'hora:00'
+            hora = this.dateService
+              .dayjsAddTree(taskPlanning.data_base)
+              .format('HH:mm');
+
+            cronExpression = `${hora.split(':')[1]} ${hora.split(':')[0]} ${
+              taskPlanning.periodicidade_uso
+            } * *`;
+            jobKey = `planejamento-${descriptionPlanMaintenance.company.razao_social}-rotina-mensal-${descriptionPlanMaintenance.family.familia}-${descriptionPlanMaintenance.descricao}`;
+            break;
+
+          default:
+            throw new Error('Tipo de agendamento inválido');
+        }
+
+        await prisma.smartnewsystem_manutencao_registro_planejamento_automatico.update(
+          {
+            data: {
+              chave_rotina: jobKey,
+              codigo_rotina: cronExpression,
+              data_inicio: this.dateService
+                .dayjs(taskPlanning?.data_inicio || new Date())
+                .subtract(3, 'h')
+                .toDate(),
+              ativo: 1,
+              ultimo_registro: this.dateService
+                .dayjs(taskPlanning?.data_inicio || new Date())
+                .subtract(3, 'h')
+                .toDate(),
+            },
+            where: { id: validExist.id },
+          },
+        );
+
+        // Cria um novo CronJob com a nova expressão
+        const newCronJob = new CronJob(cronExpression, async () => {
+          if (
+            this.dateService.dayjsSubTree(new Date()).toDate() >=
+              taskPlanning.data_inicio ||
+            new Date()
+          ) {
+            console.log(`Rotina ${jobKey} iniciada`);
+            await this.create(prisma, taskPlanning.id);
+            await this.updateLastExecution(prisma, taskPlanning.id);
+          }
+        });
+
+        // Registra o novo CronJob
+        this.schedulerRegistry.addCronJob(
+          `${validExist.id}-${jobKey}`,
+          newCronJob,
+        );
+        this.allCronJobActive[jobKey] = newCronJob;
+        newCronJob.start();
+
+        // Atualiza a expressão no banco
+        await prisma.smartnewsystem_manutencao_registro_planejamento_automatico.update(
+          {
+            where: { id: validExist.id },
+            data: { codigo_rotina: cronExpression },
+          },
+        );
+
         // const job = new CronJob(cronExpression, async () => {
         //   await this.create(validExist.id);
         //   await this.updateLastExecution(validExist.id);
@@ -347,6 +486,11 @@ export default class DescriptionPlanningService
                     id_setor_executante: true,
                     id_tipo_manutencao: true,
                     descricao: true,
+                    equipment: {
+                      select: {
+                        ID: true,
+                      },
+                    },
                     planningEquipment: {
                       select: {
                         id: true,
@@ -368,92 +512,80 @@ export default class DescriptionPlanningService
       );
     const now = this.dateService.dayjsSubTree(new Date()).toDate();
 
-    for await (const equipment of register.taskPlanning
-      .descriptionPlanMaintenance.planningEquipment) {
-      const equipmentFind = await prisma.cadastro_de_equipamentos.findFirst({
-        select: {
-          ID: true,
-          ID_filial: true,
-        },
+    const equipmentFind = await prisma.cadastro_de_equipamentos.findFirst({
+      select: {
+        ID: true,
+        ID_filial: true,
+      },
+      where: {
+        ID: register.taskPlanning.descriptionPlanMaintenance.equipment.ID,
+      },
+    });
+
+    const registerAutomatic =
+      await prisma.smartnewsystem_manutencao_planejamento_automatico.findFirst({
         where: {
-          ID: equipment.id,
-        },
-      });
-
-      const registerAutomatic =
-        await prisma.smartnewsystem_manutencao_planejamento_automatico.findFirst(
-          {
-            where: {
-              id_cliente: register.id_cliente,
-              id_registro_automatico: register.id,
-              id_equipamento: equipmentFind.ID,
-            },
-          },
-        );
-
-      if (register.gerar_finalizado === 1 && registerAutomatic) {
-        const orderServiceOld =
-          await prisma.controle_de_ordens_de_servico.findFirst({
-            where: {
-              planningAutomatic: {
-                some: {
-                  id: registerAutomatic.id,
-                },
-              },
-            },
-          });
-        if (
-          orderServiceOld &&
-          orderServiceOld.data_hora_encerramento === null
-        ) {
-          await prisma.smartnewsystem_manutencao_planejamento_automatico.create(
-            {
-              data: {
-                id_ordem_servico: orderServiceOld.ID,
-                id_registro_automatico: register.id,
-                id_cliente: orderServiceOld.ID_cliente,
-                id_equipamento: equipmentFind.ID,
-                observacao: `Ordem de Serviço não lançada pois anterior ${orderServiceOld.ID} ainda nao foi finalizada!`,
-              },
-            },
-          );
-          continue;
-        }
-      }
-      const orderService = await prisma.controle_de_ordens_de_servico.create({
-        data: {
-          ID_cliente: register.id_cliente,
-          ID_filial: equipmentFind.ID_filial,
-          ID_setor:
-            register.taskPlanning.descriptionPlanMaintenance
-              .id_setor_executante,
-          id_equipamento: equipmentFind.ID,
-          data_hora_solicitacao: now,
-          log_user: register.taskPlanning.log_user,
-          observacoes: `Criado automaticamente do Plano: ${register.taskPlanning.descriptionPlanMaintenance.descricao}`,
-          taskServiceOrder: {
-            create: {
-              id_cliente: register.id_cliente,
-              id_filial: equipmentFind.ID_filial,
-              id_componente: register.taskPlanning.id_componente,
-              tarefa: register.taskPlanning.task.id,
-            },
-          },
-        },
-      });
-
-      console.log(`Ordem de Serviço ${orderService.ID} criada.`);
-
-      await prisma.smartnewsystem_manutencao_planejamento_automatico.create({
-        data: {
-          id_ordem_servico: orderService.ID,
+          id_cliente: register.id_cliente,
           id_registro_automatico: register.id,
-          id_cliente: orderService.ID_cliente,
           id_equipamento: equipmentFind.ID,
-          observacao: `Ordem de Serviço ${orderService.ID} criada automaticamente`,
         },
       });
+
+    if (register.gerar_finalizado === 1 && registerAutomatic) {
+      const orderServiceOld =
+        await prisma.controle_de_ordens_de_servico.findFirst({
+          where: {
+            planningAutomatic: {
+              some: {
+                id: registerAutomatic.id,
+              },
+            },
+          },
+        });
+      if (orderServiceOld && orderServiceOld.data_hora_encerramento === null) {
+        await prisma.smartnewsystem_manutencao_planejamento_automatico.create({
+          data: {
+            id_ordem_servico: orderServiceOld.ID,
+            id_registro_automatico: register.id,
+            id_cliente: orderServiceOld.ID_cliente,
+            id_equipamento: equipmentFind.ID,
+            observacao: `Ordem de Serviço não lançada pois anterior ${orderServiceOld.ID} ainda nao foi finalizada!`,
+          },
+        });
+      }
     }
+    const orderService = await prisma.controle_de_ordens_de_servico.create({
+      data: {
+        ID_cliente: register.id_cliente,
+        ID_filial: equipmentFind.ID_filial,
+        ID_setor:
+          register.taskPlanning.descriptionPlanMaintenance.id_setor_executante,
+        id_equipamento: equipmentFind.ID,
+        data_hora_solicitacao: now,
+        log_user: register.taskPlanning.log_user,
+        observacoes: `Criado automaticamente do Plano: ${register.taskPlanning.descriptionPlanMaintenance.descricao}`,
+        taskServiceOrder: {
+          create: {
+            id_cliente: register.id_cliente,
+            id_filial: equipmentFind.ID_filial,
+            id_componente: register.taskPlanning.id_componente,
+            tarefa: register.taskPlanning.task.id,
+          },
+        },
+      },
+    });
+
+    console.log(`Ordem de Serviço ${orderService.ID} criada.`);
+
+    await prisma.smartnewsystem_manutencao_planejamento_automatico.create({
+      data: {
+        id_ordem_servico: orderService.ID,
+        id_registro_automatico: register.id,
+        id_cliente: orderService.ID_cliente,
+        id_equipamento: equipmentFind.ID,
+        observacao: `Ordem de Serviço ${orderService.ID} criada automaticamente`,
+      },
+    });
   }
 
   // Método para calcular o próximo horário de execução
