@@ -137,7 +137,7 @@ export default class DescriptionPlanningService
     taskPlanningId: number,
   ): Promise<{
     message: string;
-    cronJob: 'created' | 'exists';
+    cronJob: 'created' | 'exists' | 'notCreated';
   }> {
     let prisma = this.smartPrisma;
 
@@ -319,6 +319,11 @@ export default class DescriptionPlanningService
         };
       }
     }
+
+    return {
+      message: 'Rotina não criada!',
+      cronJob: 'notCreated',
+    };
   }
 
   async create(prisma: PrismaClient, registerId: number): Promise<void> {

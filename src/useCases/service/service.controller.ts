@@ -28,7 +28,7 @@ export default class ServiceController {
 
     const body = bodySchema.parse(req.body);
 
-    await new DescriptionPlanningService(
+    const cronJob = await new DescriptionPlanningService(
       this.schedulerRegistry,
       this.envService,
       this.dateService,
@@ -37,6 +37,7 @@ export default class ServiceController {
     return {
       success: true,
       message: 'CronJob Planejamento Criado!',
+      cronJob,
     };
   }
 }
