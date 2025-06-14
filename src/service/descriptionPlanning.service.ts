@@ -35,7 +35,7 @@ export default class DescriptionPlanningService
   });
 
   async onModuleInit() {
-    if (this.envService.NODE_ENV === 'service') {
+    if (this.envService.NODE_ENV === 'services') {
       console.log('CronJobs da smart');
       await this.initializeCronJobs(this.smartPrisma);
 

@@ -28,16 +28,16 @@ export default class ServiceController {
 
     const body = bodySchema.parse(req.body);
 
-    const cronJob = await new DescriptionPlanningService(
-      this.schedulerRegistry,
-      this.envService,
-      this.dateService,
-    ).createJob(body.bankId, body.taskId);
+    // const cronJob = await new DescriptionPlanningService(
+    //   this.schedulerRegistry,
+    //   this.envService,
+    //   this.dateService,
+    // ).createJob(body.bankId, body.taskId);
 
     return {
       success: true,
       message: 'CronJob Planejamento Criado!',
-      cronJob,
+      //cronJob,
     };
   }
 }
