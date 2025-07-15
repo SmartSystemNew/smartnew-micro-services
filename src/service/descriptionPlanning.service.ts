@@ -510,7 +510,7 @@ export default class DescriptionPlanningService
           where: { id: registerId },
         },
       );
-    const now = this.dateService.dayjsSubTree(new Date()).toDate();
+    //const now = this.dateService.dayjsSubTree(new Date()).toDate();
 
     const equipmentFind = await prisma.cadastro_de_equipamentos.findFirst({
       select: {
@@ -594,11 +594,22 @@ export default class DescriptionPlanningService
         }
       } catch (error) {
         console.error('Erro ao executar SQL:', error);
+        const valid = {
+          calculePlan: calculePlan[0],
+          equipmentFind,
+          ...error,
+        };
+        await prisma.smartnewsystem_log_erro_banco.create({
+          data: {
+            dados: valid,
+          },
+        });
       }
+
       await prisma.smartnewsystem_manutencao_planejamento_automatico.create({
         data: {
           //id_ordem_servico: orderService.ID,
-          id_ordem_servico: 1,
+          //id_ordem_servico: 1,
           id_registro_automatico: register.id,
           id_cliente: register.id_cliente,
           id_equipamento: equipmentFind.ID,

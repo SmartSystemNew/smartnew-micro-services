@@ -3966,6 +3966,12 @@ model smartnewsystem_log_acesso_app {
   log_date   DateTime? @default(now()) @db.Timestamp(0)
 }
 
+model smartnewsystem_log_erro_banco {
+  id       Int      @id @default(autoincrement())
+  dados    Json?
+  log_date DateTime @default(now())
+}
+
 model smartnewsystem_menu_itens {
   id          Int                                    @id @default(autoincrement())
   id_pai      Int
@@ -4282,13 +4288,13 @@ model smartnewsystem_manutencao_planejamento_automatico {
   id_cliente             Int
   id_registro_automatico Int
   id_equipamento         Int
-  id_ordem_servico       Int
+  id_ordem_servico       Int?
   observacao             String?
   log_date               DateTime @default(now())
 
   company           cadastro_de_empresas?                                      @relation(fields: [id_cliente], references: [ID])
   registerAutomatic smartnewsystem_manutencao_registro_planejamento_automatico @relation(fields: [id_registro_automatico], references: [id])
-  serviceOrder      controle_de_ordens_de_servico                              @relation(fields: [id_ordem_servico], references: [ID])
+  serviceOrder      controle_de_ordens_de_servico?                              @relation(fields: [id_ordem_servico], references: [ID])
   equipment         cadastro_de_equipamentos                                   @relation(fields: [id_equipamento], references: [ID])
 }
 
