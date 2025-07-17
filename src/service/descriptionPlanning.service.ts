@@ -582,11 +582,15 @@ export default class DescriptionPlanningService
 
     if (calculePlan.length > 0 && calculePlan[0].calcula === 1) {
       try {
+        // const sqlExec: string[] = await prisma.$queryRaw`
+        //   select proc from sofman_view_processa_pcm
+        //   WHERE id_filial IN(
+        //     SELECT id_filial FROM sofman_filiais_x_usuarios
+        // 					WHERE id = ${equipmentFind.ID_filial} )
+        // order by programacaoid;`;
         const sqlExec: string[] = await prisma.$queryRaw`
           select proc from sofman_view_processa_pcm
-				  WHERE id_filial IN(
-            SELECT id_filial FROM sofman_filiais_x_usuarios
-									WHERE id = ${equipmentFind.ID_filial} )
+				  WHERE id_filial IN( ${equipmentFind.ID_filial} )
 				order by programacaoid;`;
 
         for (const sql of sqlExec) {
