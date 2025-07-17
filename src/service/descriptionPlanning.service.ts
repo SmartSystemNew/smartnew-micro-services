@@ -152,6 +152,8 @@ export default class DescriptionPlanningService
           data_base: true,
           log_user: true,
           data_inicio: true,
+          numero_hora: true,
+          periodicidade_dias: true,
           descriptionPlanMaintenance: {
             select: {
               id: true,
@@ -207,7 +209,7 @@ export default class DescriptionPlanningService
           // Executa a cada 'valor' horas
           // Usa o horário de base definido pelo modelo
           const horaBase = this.dateService.dayjsAddTree(new Date());
-          const intervaloHoras = taskPlanning.periodicidade_uso;
+          const intervaloHoras = taskPlanning.numero_hora;
 
           // Define os minutos e a hora de início
           const minutos = horaBase.minute();
@@ -220,12 +222,14 @@ export default class DescriptionPlanningService
           break;
 
         case 'DIA':
-          // Executa todo dia às 'hora:00'
-          hora = this.dateService
-            .dayjsAddTree(taskPlanning.data_base)
-            .format('HH:mm');
+          // // Executa todo dia às 'hora:00'
+          // hora = this.dateService
+          //   .dayjsAddTree(taskPlanning.data_base)
+          //   .format('HH:mm');
+          //Executa a cada x dias
+          const intervalDay = taskPlanning.periodicidade_dias;
 
-          cronExpression = `${hora.split(':')[1]} ${hora.split(':')[0]} * * *`;
+          cronExpression = `0 0 */${intervalDay} * *`;
           jobKey = `planejamento-${descriptionPlanMaintenance.company.razao_social}-rotina-dia-${descriptionPlanMaintenance.family.familia}-${descriptionPlanMaintenance.descricao}`;
           break;
 

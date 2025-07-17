@@ -4294,7 +4294,7 @@ model smartnewsystem_manutencao_planejamento_automatico {
 
   company           cadastro_de_empresas?                                      @relation(fields: [id_cliente], references: [ID])
   registerAutomatic smartnewsystem_manutencao_registro_planejamento_automatico @relation(fields: [id_registro_automatico], references: [id])
-  serviceOrder      controle_de_ordens_de_servico?                              @relation(fields: [id_ordem_servico], references: [ID])
+  serviceOrder      controle_de_ordens_de_servico?                             @relation(fields: [id_ordem_servico], references: [ID])
   equipment         cadastro_de_equipamentos                                   @relation(fields: [id_equipamento], references: [ID])
 }
 
@@ -9761,6 +9761,7 @@ model sofman_tarefas_planejamento_manutencao {
   unidade_medida         Int?
   periodicidade_uso      Decimal   @default(0) @db.Decimal(10, 0)
   valor_base             Decimal?  @db.Decimal(10, 2)
+  numero_hora            Int?
   incremento_programacao Boolean?  @default(true)
   periodicidade_dias     Decimal   @default(0) @db.Decimal(10, 0)
   data_base              DateTime? @db.Date
