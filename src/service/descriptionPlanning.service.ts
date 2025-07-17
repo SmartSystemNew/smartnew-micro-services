@@ -510,7 +510,7 @@ export default class DescriptionPlanningService
           where: { id: registerId },
         },
       );
-    const now = this.dateService.dayjsSubTree(new Date()).toDate();
+    //const now = this.dateService.dayjsSubTree(new Date()).toDate();
 
     const equipmentFind = await prisma.cadastro_de_equipamentos.findFirst({
       select: {
@@ -522,70 +522,102 @@ export default class DescriptionPlanningService
       },
     });
 
-    const registerAutomatic =
-      await prisma.smartnewsystem_manutencao_planejamento_automatico.findFirst({
-        where: {
-          id_cliente: register.id_cliente,
-          id_registro_automatico: register.id,
-          id_equipamento: equipmentFind.ID,
-        },
-      });
+    // const registerAutomatic =
+    //   await prisma.smartnewsystem_manutencao_planejamento_automatico.findFirst({
+    //     where: {
+    //       id_cliente: register.id_cliente,
+    //       id_registro_automatico: register.id,
+    //       id_equipamento: equipmentFind.ID,
+    //     },
+    //   });
 
-    if (register.gerar_finalizado === 1 && registerAutomatic) {
-      const orderServiceOld =
-        await prisma.controle_de_ordens_de_servico.findFirst({
-          where: {
-            planningAutomatic: {
-              some: {
-                id: registerAutomatic.id,
-              },
-            },
-          },
-        });
-      if (orderServiceOld && orderServiceOld.data_hora_encerramento === null) {
-        await prisma.smartnewsystem_manutencao_planejamento_automatico.create({
+    // if (register.gerar_finalizado === 1 && registerAutomatic) {
+    //   const orderServiceOld =
+    //     await prisma.controle_de_ordens_de_servico.findFirst({
+    //       where: {
+    //         planningAutomatic: {
+    //           some: {
+    //             id: registerAutomatic.id,
+    //           },
+    //         },
+    //       },
+    //     });
+    //   if (orderServiceOld && orderServiceOld.data_hora_encerramento === null) {
+    //     await prisma.smartnewsystem_manutencao_planejamento_automatico.create({
+    //       data: {
+    //         id_ordem_servico: orderServiceOld.ID,
+    //         id_registro_automatico: register.id,
+    //         id_cliente: orderServiceOld.ID_cliente,
+    //         id_equipamento: equipmentFind.ID,
+    //         observacao: `Ordem de Serviço não lançada pois anterior ${orderServiceOld.ID} ainda nao foi finalizada!`,
+    //       },
+    //     });
+    //   }
+    // }
+    // const orderService = await prisma.controle_de_ordens_de_servico.create({
+    //   data: {
+    //     ID_cliente: register.id_cliente,
+    //     ID_filial: equipmentFind.ID_filial,
+    //     ID_setor:
+    //       register.taskPlanning.descriptionPlanMaintenance.id_setor_executante,
+    //     id_equipamento: equipmentFind.ID,
+    //     data_hora_solicitacao: now,
+    //     log_user: register.taskPlanning.log_user,
+    //     observacoes: `Criado automaticamente do Plano: ${register.taskPlanning.descriptionPlanMaintenance.descricao}`,
+    //     taskServiceOrder: {
+    //       create: {
+    //         id_cliente: register.id_cliente,
+    //         id_filial: equipmentFind.ID_filial,
+    //         id_componente: register.taskPlanning.id_componente,
+    //         tarefa: register.taskPlanning.task.id,
+    //       },
+    //     },
+    //   },
+    // });
+    const calculePlan = await prisma.sofman_calcula_planos.findMany({
+      where: {
+        id_cliente: register.id_cliente,
+      },
+    });
+
+    if (calculePlan.length > 0 && calculePlan[0].calcula === 1) {
+      try {
+        const sqlExec: string[] = await prisma.$queryRaw`
+          select proc from sofman_view_processa_pcm
+				  WHERE id_filial IN(
+            SELECT id_filial FROM sofman_filiais_x_usuarios
+									WHERE id = ${equipmentFind.ID_filial} )
+				order by programacaoid;`;
+
+        for (const sql of sqlExec) {
+          await prisma.$executeRawUnsafe(sql);
+        }
+      } catch (error) {
+        console.error('Erro ao executar SQL:', error);
+        const valid = {
+          calculePlan: calculePlan[0],
+          equipmentFind,
+          ...error,
+        };
+        await prisma.smartnewsystem_log_erro_banco.create({
           data: {
-            id_ordem_servico: orderServiceOld.ID,
-            id_registro_automatico: register.id,
-            id_cliente: orderServiceOld.ID_cliente,
-            id_equipamento: equipmentFind.ID,
-            observacao: `Ordem de Serviço não lançada pois anterior ${orderServiceOld.ID} ainda nao foi finalizada!`,
+            dados: valid,
           },
         });
       }
-    }
-    const orderService = await prisma.controle_de_ordens_de_servico.create({
-      data: {
-        ID_cliente: register.id_cliente,
-        ID_filial: equipmentFind.ID_filial,
-        ID_setor:
-          register.taskPlanning.descriptionPlanMaintenance.id_setor_executante,
-        id_equipamento: equipmentFind.ID,
-        data_hora_solicitacao: now,
-        log_user: register.taskPlanning.log_user,
-        observacoes: `Criado automaticamente do Plano: ${register.taskPlanning.descriptionPlanMaintenance.descricao}`,
-        taskServiceOrder: {
-          create: {
-            id_cliente: register.id_cliente,
-            id_filial: equipmentFind.ID_filial,
-            id_componente: register.taskPlanning.id_componente,
-            tarefa: register.taskPlanning.task.id,
-          },
+
+      await prisma.smartnewsystem_manutencao_planejamento_automatico.create({
+        data: {
+          //id_ordem_servico: orderService.ID,
+          //id_ordem_servico: 1,
+          id_registro_automatico: register.id,
+          id_cliente: register.id_cliente,
+          id_equipamento: equipmentFind.ID,
+          //observacao: `Ordem de Serviço ${orderService.ID} criada automaticamente`,
         },
-      },
-    });
-
-    console.log(`Ordem de Serviço ${orderService.ID} criada.`);
-
-    await prisma.smartnewsystem_manutencao_planejamento_automatico.create({
-      data: {
-        id_ordem_servico: orderService.ID,
-        id_registro_automatico: register.id,
-        id_cliente: orderService.ID_cliente,
-        id_equipamento: equipmentFind.ID,
-        observacao: `Ordem de Serviço ${orderService.ID} criada automaticamente`,
-      },
-    });
+      });
+    }
+    //console.log(`Ordem de Serviço ${orderService.ID} criada.`);
   }
 
   // Método para calcular o próximo horário de execução
