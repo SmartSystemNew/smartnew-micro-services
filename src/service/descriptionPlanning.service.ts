@@ -592,13 +592,13 @@ export default class DescriptionPlanningService
         //     SELECT id_filial FROM sofman_filiais_x_usuarios
         // 					WHERE id = ${equipmentFind.ID_filial} )
         // order by programacaoid;`;
-        const sqlExec: string[] = await prisma.$queryRaw`
+        const sqlExec: { proc: string }[] = await prisma.$queryRaw`
           select proc from sofman_view_processa_pcm
 				  WHERE id_filial IN( ${equipmentFind.ID_filial} )
 				order by programacaoid;`;
 
         for (const sql of sqlExec) {
-          await prisma.$executeRawUnsafe(sql);
+          await prisma.$executeRawUnsafe(sql.proc);
         }
       } catch (error) {
         console.error('Erro ao executar SQL:', error);
