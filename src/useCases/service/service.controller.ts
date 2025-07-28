@@ -2,6 +2,7 @@ import { Controller, Get, Post, Req } from '@nestjs/common';
 import { SchedulerRegistry } from '@nestjs/schedule';
 import { ApiTags } from '@nestjs/swagger';
 import { DateService } from 'src/service/data.service';
+import DescriptionPlanningService from 'src/service/descriptionPlanning.service';
 //import DescriptionPlanningService from 'src/service/descriptionPlanning.service';
 import { ENVService } from 'src/service/env.service';
 import { z } from 'zod';
@@ -28,18 +29,18 @@ export default class ServiceController {
 
     const body = bodySchema.parse(req.body);
 
-    console.log(body);
+    //console.log(body);
 
-    // const cronJob = await new DescriptionPlanningService(
-    //   this.schedulerRegistry,
-    //   this.envService,
-    //   this.dateService,
-    // ).createJob(body.bankId, body.taskId);
+    const cronJob = await new DescriptionPlanningService(
+      this.schedulerRegistry,
+      this.envService,
+      this.dateService,
+    ).createJob(body.bankId, body.taskId);
 
     return {
       success: true,
       message: 'CronJob Planejamento Criado!',
-      //cronJob,
+      cronJob,
     };
   }
 }

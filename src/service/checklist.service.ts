@@ -16,7 +16,7 @@ export default class ChecklistService implements OnModuleInit {
 
   private allCronJobActive = {};
   async onModuleInit() {
-    if (this.envService.NODE_ENV === 'dev') {
+    if (this.envService.NODE_ENV === 'services') {
       await this.initializeCronJobs();
     }
   }
