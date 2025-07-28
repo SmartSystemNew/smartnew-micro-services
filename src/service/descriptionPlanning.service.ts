@@ -35,7 +35,7 @@ export default class DescriptionPlanningService
   });
 
   async onModuleInit() {
-    if (this.envService.NODE_ENV === 'services') {
+    if (this.envService.NODE_ENV === 'service') {
       console.log('CronJobs da smart');
       await this.initializeCronJobs(this.smartPrisma);
 
@@ -51,83 +51,82 @@ export default class DescriptionPlanningService
 
   async initializeCronJobs(prisma: PrismaClient) {
     console.log('CronJobs inicializados');
-    const cronJobs =
-      await prisma.smartnewsystem_manutencao_registro_planejamento_automatico.findMany(
-        {
-          where: {
-            ativo: 1,
-          },
-        },
-      );
+    await this.createForPlan(prisma);
+    // const cronJobs =
+    //   await prisma.smartnewsystem_manutencao_registro_planejamento_automatico.findMany(
+    //     {
+    //       where: {
+    //         ativo: 1,
+    //       },
+    //     },
+    //   );
 
-    cronJobs.forEach((job) => {
-      // Calcula o próximo horário de execução baseado na última execução
+    // cronJobs.forEach((job) => {
+    //   // Calcula o próximo horário de execução baseado na última execução
 
-      const lastExecution = new Date(job.ultimo_registro || job.data_inicio);
+    //   const lastExecution = new Date(job.ultimo_registro || job.data_inicio);
 
-      let nextExecution = this.calculateNextExecution(
-        job.codigo_rotina,
-        lastExecution,
-      );
+    //   let nextExecution = this.calculateNextExecution(
+    //     job.codigo_rotina,
+    //     lastExecution,
+    //   );
 
-      let existingJob;
+    //   let existingJob;
 
-      try {
-        // Tenta buscar o cron job registrado
-        existingJob = this.schedulerRegistry.getCronJob(
-          `${job.id}-${job.chave_rotina}`,
-        );
-      } catch (error) {
-        // Se não encontrar, o catch irá capturar e continuar
-        console.log(
-          `Cron job ${job.id}-${job.chave_rotina} não encontrado. Será criado.`,
-        );
-      }
+    //   try {
+    //     // Tenta buscar o cron job registrado
+    //     existingJob = this.schedulerRegistry.getCronJob(
+    //       `${job.id}-${job.chave_rotina}`,
+    //     );
+    //   } catch (error) {
+    //     // Se não encontrar, o catch irá capturar e continuar
+    //     console.log(
+    //       `Cron job ${job.id}-${job.chave_rotina} não encontrado. Será criado.`,
+    //     );
+    //   }
 
-      const now = this.dateService.dayjsSubTree(new Date()).toDate();
+    //   const now = this.dateService.dayjsSubTree(new Date()).toDate();
 
-      console.log('nextExecution => ', nextExecution);
+    //   console.log('nextExecution => ', nextExecution);
 
-      if (nextExecution < now) {
-        // Se o próximo horário de execução já passou, execute imediatamente
+    //   if (nextExecution < now) {
+    //     // Se o próximo horário de execução já passou, execute imediatamente
 
-        console.log(
-          `Rotina ${job.chave_rotina} deveria ter sido executada em ${nextExecution}. Executando agora.`,
-        );
-        this.create(prisma, job.id); // Executa a tarefa atrasada
-        this.updateLastExecution(prisma, job.id);
+    //     console.log(
+    //       `Rotina ${job.chave_rotina} deveria ter sido executada em ${nextExecution}. Executando agora.`,
+    //     );
+    //     this.create(prisma, job.id); // Executa a tarefa atrasada
+    //     this.updateLastExecution(prisma, job.id);
 
-        // Recalcular o próximo horário de execução futuro
+    //     // Recalcular o próximo horário de execução futuro
 
-        nextExecution = this.calculateNextExecution(
-          job.codigo_rotina,
-          lastExecution,
-        );
+    //     nextExecution = this.calculateNextExecution(
+    //       job.codigo_rotina,
+    //       lastExecution,
+    //     );
 
-        console.log(`Próxima execução recalculada para: ${nextExecution}`);
-      }
+    //     console.log(`Próxima execução recalculada para: ${nextExecution}`);
+    //   }
 
-      if (!existingJob) {
-        //Agendar o job para iniciar no próximo horário correto
-        const cronJob = new CronJob(job.codigo_rotina, async () => {
-          console.log(`Rotina ${job.chave_rotina} Iniciada`);
-          await this.create(prisma, job.id);
-          await this.updateLastExecution(prisma, job.id);
-          console.log(`Rotina ${job.chave_rotina} finalizada`);
-        });
+    //   if (!existingJob) {
+    //     //Agendar o job para iniciar no próximo horário correto
+    //     const cronJob = new CronJob(job.codigo_rotina, async () => {
+    //       console.log(`Rotina ${job.chave_rotina} Iniciada`);
+    //       await this.create(prisma, job.id);
+    //       await this.updateLastExecution(prisma, job.id);
+    //       console.log(`Rotina ${job.chave_rotina} finalizada`);
+    //     });
 
-        this.schedulerRegistry.addCronJob(
-          `${job.id}-${job.chave_rotina}`,
-          cronJob,
-        );
+    //     this.schedulerRegistry.addCronJob(
+    //       `${job.id}-${job.chave_rotina}`,
+    //       cronJob,
+    //     );
 
-        cronJob.start();
-      }
-    });
+    //     cronJob.start();
+    //   }
+    // });
 
-    console.log(
-      `${cronJobs.length} cron jobs foram reativados na inicialização.`,
-    );
+    console.log(`cron jobs foram reativados na inicialização.`);
   }
 
   // Cria método Job
