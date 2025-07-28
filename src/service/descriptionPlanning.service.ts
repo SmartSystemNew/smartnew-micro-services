@@ -620,6 +620,59 @@ export default class DescriptionPlanningService
     //console.log(`Ordem de Serviço ${orderService.ID} criada.`);
   }
 
+  //Método de criação por plano (Cleidson)
+  async createForPlan(prisma: PrismaClient) {
+    const moduleMaintenance = await prisma.smartnewsystem_modulo_nome.findFirst(
+      {
+        where: {
+          id: 1,
+        },
+      },
+    );
+    if (moduleMaintenance) {
+      const allCompany = moduleMaintenance.clientes.split(',');
+
+      for (const company of allCompany) {
+        const calculePlan = await prisma.sofman_calcula_planos.findMany({
+          where: {
+            id_cliente: Number(company),
+          },
+        });
+
+        if (calculePlan.length > 0 && calculePlan[0].calcula === 1) {
+          console.log(
+            `Iniciando processamento de planos para a empresa: ${company}`,
+          );
+
+          console.log(calculePlan);
+          try {
+            const sqlExec: string[] = await prisma.$queryRaw`
+              select proc from sofman_view_processa_pcm
+              WHERE id_filial IN(
+                SELECT id_filial FROM sofman_filiais_x_usuarios
+                WHERE id_cliente = ${Number(company)} )
+              order by programacaoid;`;
+            console.log(sqlExec);
+            // for (const sql of sqlExec) {
+            //   await prisma.$executeRawUnsafe(sql);
+            // }
+          } catch (error) {
+            console.error('Erro ao executar SQL:', error);
+            const valid = {
+              calculePlan: calculePlan[0],
+              ...error,
+            };
+            await prisma.smartnewsystem_log_erro_banco.create({
+              data: {
+                dados: valid,
+              },
+            });
+          }
+        }
+      }
+    }
+  }
+
   // Método para calcular o próximo horário de execução
   calculateNextExecution(cronExpression: string, referenceDate: Date): Date {
     const interval = cronParser.parseExpression(cronExpression, {
