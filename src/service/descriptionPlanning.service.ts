@@ -10,6 +10,7 @@ import { CronJob } from 'cron';
 import * as cronParser from 'cron-parser';
 import { DateService } from './data.service';
 import { PrismaClient } from '@prisma/client';
+import console from 'node:console';
 
 @Injectable()
 export default class DescriptionPlanningService
@@ -37,11 +38,19 @@ export default class DescriptionPlanningService
   async onModuleInit() {
     if (this.envService.NODE_ENV === 'service') {
       console.log('CronJobs da smart');
-      await this.initializeCronJobs(this.smartPrisma);
+      await this.initializeCronJobs(this.smartPrisma, 'smart-cronJob-plan');
 
       console.log('CronJobs da sofman');
-      await this.initializeCronJobs(this.sofmanPrisma);
+      await this.initializeCronJobs(this.sofmanPrisma, 'sofman-cronJob-plan');
     }
+
+    // this.schedulerRegistry.getCronJobs().forEach((job) => {
+    //   console.log(`CronJob: `);
+    //   console.log(job.context);
+    // });
+    console.log(
+      `Total de CronJobs: ${this.schedulerRegistry.getCronJobs().size}`,
+    );
   }
 
   async onModuleDestroy() {
@@ -49,9 +58,59 @@ export default class DescriptionPlanningService
     this.sofmanPrisma.$disconnect();
   }
 
-  async initializeCronJobs(prisma: PrismaClient) {
+  async initializeCronJobs(prisma: PrismaClient, code: string) {
     console.log('CronJobs inicializados');
-    await this.createForPlan(prisma);
+
+    let existingJob;
+
+    try {
+      // Tenta buscar o cron job registrado
+      existingJob = this.schedulerRegistry.getCronJob(`${code}`);
+    } catch (error) {
+      // Se não encontrar, o catch irá capturar e continuar
+      console.log(`Cron job ${code} não encontrado. Será criado.`);
+    }
+
+    if (!existingJob) {
+      //const horaBase = this.dateService.dayjsAddTree(new Date());
+      const intervaloHoras = 1;
+
+      // Define os minutos e a hora de início
+      //const minutos = horaBase.minute();
+
+      // Cria uma expressão cron que execute a cada 'intervaloHoras' horas nos minutos definidos
+      const cronExpression = `0 */${intervaloHoras} * * *`;
+      console.log(`O CronJob rodará a cada : ${intervaloHoras} horas`);
+      await this.createForPlan(prisma);
+      const cronJob = new CronJob(cronExpression, async () => {
+        console.log(`Rotina ${code} Iniciada`);
+        await this.createForPlan(prisma);
+        //await this.updateLastExecution(prisma, job.id);
+        console.log(`Rotina ${code} finalizada`);
+        // Exibe a próxima execução
+        const interval = cronParser.parseExpression(cronExpression, {
+          currentDate: new Date(),
+        });
+
+        console.log(
+          `Próxima execução do cronJob ${code}: ${interval.next().toString()}`,
+        );
+      });
+
+      // Exibe a próxima execução
+      const interval = cronParser.parseExpression(cronExpression, {
+        currentDate: new Date(),
+      });
+
+      console.log(
+        `Próxima execução do cronJob ${code}: ${interval.next().toString()}`,
+      );
+
+      this.schedulerRegistry.addCronJob(`${code}`, cronJob);
+
+      cronJob.start();
+    }
+
     // const cronJobs =
     //   await prisma.smartnewsystem_manutencao_registro_planejamento_automatico.findMany(
     //     {
@@ -640,6 +699,10 @@ export default class DescriptionPlanningService
       const allCompany = moduleMaintenance.clientes.split(',');
 
       for (const company of allCompany) {
+        if (Number(company) === 221) {
+          console.log('Empresa 221 não processada');
+          continue; // Pula a empresa 221
+        }
         const calculePlan = await prisma.sofman_calcula_planos.findMany({
           where: {
             id_cliente: Number(company),
@@ -651,18 +714,18 @@ export default class DescriptionPlanningService
             `Iniciando processamento de planos para a empresa: ${company}`,
           );
 
-          console.log(calculePlan);
           try {
-            const sqlExec: string[] = await prisma.$queryRaw`
+            const sqlExec: { proc: string }[] = await prisma.$queryRaw`
               select proc from sofman_view_processa_pcm
               WHERE id_filial IN(
                 SELECT id_filial FROM sofman_filiais_x_usuarios
                 WHERE id_cliente = ${Number(company)} )
               order by programacaoid;`;
-            console.log(sqlExec);
-            // for (const sql of sqlExec) {
-            //   await prisma.$executeRawUnsafe(sql);
-            // }
+            //console.log(sqlExec);
+            for (const sql of sqlExec) {
+              console.log(sql);
+              await prisma.$executeRawUnsafe(sql.proc);
+            }
           } catch (error) {
             console.error('Erro ao executar SQL:', error);
             const valid = {
