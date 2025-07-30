@@ -688,6 +688,13 @@ export default class DescriptionPlanningService
 
   //Método de criação por plano (Cleidson)
   async createForPlan(prisma: PrismaClient) {
+    const allCompanyActive = await prisma.cadastro_de_empresas.findMany({
+      select: { ID: true },
+      where: {
+        status: 'ATIVO',
+      },
+    });
+
     const moduleMaintenance = await prisma.smartnewsystem_modulo_nome.findFirst(
       {
         where: {
@@ -696,7 +703,16 @@ export default class DescriptionPlanningService
       },
     );
     if (moduleMaintenance) {
-      const allCompany = moduleMaintenance.clientes.split(',');
+      const allCompany = allCompanyActive
+        .filter((company) =>
+          moduleMaintenance.clientes
+            .split(',')
+            .some(
+              (companyIdInModule) =>
+                Number(companyIdInModule) === Number(company.ID),
+            ),
+        )
+        .map((company) => company.ID);
 
       for (const company of allCompany) {
         if (Number(company) === 221) {
@@ -724,7 +740,15 @@ export default class DescriptionPlanningService
             //console.log(sqlExec);
             for (const sql of sqlExec) {
               console.log(sql);
-              await prisma.$executeRawUnsafe(sql.proc);
+              try {
+                await prisma.$executeRawUnsafe(sql.proc);
+              } catch (error) {
+                console.error('Erro ao executar procedure:', error);
+                if (error.meta?.message) {
+                  console.error('Mensagem do MySQL:', error.meta.message);
+                }
+                throw error;
+              }
             }
           } catch (error) {
             console.error('Erro ao executar SQL:', error);
