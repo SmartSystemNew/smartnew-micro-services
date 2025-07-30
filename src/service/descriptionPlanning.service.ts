@@ -89,7 +89,7 @@ export default class DescriptionPlanningService
         console.log(`Rotina ${code} finalizada`);
         // Exibe a próxima execução
         const interval = cronParser.parseExpression(cronExpression, {
-          currentDate: new Date(),
+          currentDate: this.dateService.dayjsSubTree(new Date()).toDate(),
         });
 
         console.log(
@@ -99,7 +99,7 @@ export default class DescriptionPlanningService
 
       // Exibe a próxima execução
       const interval = cronParser.parseExpression(cronExpression, {
-        currentDate: new Date(),
+        currentDate: this.dateService.dayjsSubTree(new Date()).toDate(),
       });
 
       console.log(
